@@ -1,10 +1,25 @@
-/**
-* Template Name: NiceAdmin - v2.4.1
-* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
+/*--------------------------------------------------------------
+#new css
+--------------------------------------------------------------*/
+.login-page{
+  background-color: #ffdbda;
+}
+.my-btn{
+  background: #ce152b!important;
+  color:white;
+  transition-duration: 0.4s;
+  width: 150px;
+  margin: auto;
+  
+}
+a.mylink{
+  color: grey;
+}
+.my-btn:hover{
+  background: white!important;
+  color: #ce152b;
+  border: 2px solid #ce152b; 
+}
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -16,16 +31,18 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
   color: #444444;
+
 }
 
 a {
-  color: #4154f1;
-  text-decoration: none;
+  color: grey;
+  
 }
 
 a:hover {
-  color: #717ff5;
+  color: #ce152b;
   text-decoration: none;
+
 }
 
 h1,
