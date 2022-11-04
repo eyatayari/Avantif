@@ -9,12 +9,12 @@
 
   @include('layouts.head')
 </head>
-
+ 
 <body>
 
 @include('layouts.main-headbar')
 
-@include('layouts.main-sidebar')
+
 
   <main id="main" class="main">
 
@@ -22,9 +22,8 @@
       <h1>@yield('title-page')</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Dashobard</a></li>
-          <li class="breadcrumb-item">@yield('prev-page')</li>
-          <li class="breadcrumb-item active">@yield('active-page')</li>
+          @yield('breadcrumb')
+          
         </ol>
       </nav>
     </div><!-- End Page Title -->

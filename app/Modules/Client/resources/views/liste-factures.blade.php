@@ -1,31 +1,26 @@
 @extends('layouts.master')
-@include('layouts.sidebar-gerent')
+@include('layouts.sidebar-client')
 @section('title-page')
-Liste des clients
+Historiques des factures
 @stop
 
-@section('prev-page')
-Clients
-@stop 
+
 @section('active-page')
-Liste des clients
+historique des factures
 @stop
 
 @section('content')
-<div class="btn-ajout">
-    <button type="submit" class="btn my-btn">Ajouter client</button>
-  </div>
 
   <table id="example" class="table table-striped table-bordered" style="width:100%">
     <thead>
         <tr>
             
-            <th>Nom et prénom</th>
+            <th>Réf</th>
             <th>code client</th>
-            <th>Numéro téléphone</th>
-            <th>adresse</th>
-            <th>Personne référente </th>
-            <th>Historique des factures</th>
+            <th>Code prestataire</th>
+            <th>Total TTC</th>
+            <th>Date </th>
+            <th>Etat paiment</th>
             <th>Action</th>
         </tr>
     </thead>

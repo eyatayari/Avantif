@@ -1,11 +1,42 @@
 /*--------------------------------------------------------------
 #new css
 --------------------------------------------------------------*/
+table{
+  width:100%;
+}
+.btn-ajout{
+  float:right; 
+}
+#example_filter{
+  float:right;
+}
+#example_paginate{
+  float:right;
+}
+label {
+  display: inline-flex;
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+ 
+}
+
 .login-page{
   background-color: #ffdbda;
 }
+
+.nav-pills .nav-link.active{
+  background: #ce152b!important; 
+  color:white;
+
+}
+.nav-pills .nav-link{
+  
+  color:rgb(59, 58, 58);
+
+}
+
 .my-btn{
-  background: #ce152b!important;
+  background: #ce152b!important; 
   color:white;
   transition-duration: 0.4s;
   width: 150px;
@@ -36,6 +67,7 @@ body {
 
 a {
   color: grey;
+  text-decoration: none;
   
 }
 
@@ -375,13 +407,13 @@ h6 {
 
 .nav-tabs-bordered .nav-link:hover,
 .nav-tabs-bordered .nav-link:focus {
-  color: #4154f1;
+  color: #ce152b;
 }
 
 .nav-tabs-bordered .nav-link.active {
   background-color: #fff;
-  color: #4154f1;
-  border-bottom: 2px solid #4154f1;
+  color: #ce152b;
+  border-bottom: 2px solid #ce152b;
 }
 
 /*--------------------------------------------------------------
