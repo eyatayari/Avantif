@@ -1,14 +1,11 @@
-@extends('layouts.master')
+@extends('gerant.layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Liste des clients
+Dashobard
 @stop
 
-@section('prev-page')
-Clients
-@stop 
 @section('active-page')
-Liste des clients
+Dashobard
 @stop
 
 @section('content')
@@ -26,7 +23,6 @@ Liste des clients
             <th>adresse</th>
             <th>Personne référente </th>
             <th>Historique des factures</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -38,12 +34,6 @@ Liste des clients
             <td>61</td>
             <td>2011/04/25</td>
             <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-
-            
         </tr>
         <tr>
              
@@ -53,10 +43,6 @@ Liste des clients
             <td>61</td>
             <td>2011/04/25</td>
             <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
         </tr>
         <tr>
              
@@ -66,23 +52,6 @@ Liste des clients
             <td>61</td>
             <td>2011/04/25</td>
             <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td> 
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
         </tr>
         <tr>
              
@@ -92,10 +61,15 @@ Liste des clients
             <td>61</td>
             <td>2011/04/25</td>
             <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
+        </tr>
+        <tr>
+             
+            <td>Tiger Nixon</td>
+            <td>System Architect</td>
+            <td>Edinburgh</td>
+            <td>61</td>
+            <td>2011/04/25</td>
+            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
         </tr>
   
        
@@ -106,5 +80,4 @@ Liste des clients
     </tbody>
   
 </table>
-
 @stop

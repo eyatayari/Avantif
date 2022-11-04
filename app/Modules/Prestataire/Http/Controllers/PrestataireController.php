@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Gerent\Http\Controllers;
+namespace App\Modules\Prestataire\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class GerentController extends Controller
+class PrestataireController extends Controller
 {
 
     /**
@@ -15,6 +15,6 @@ class GerentController extends Controller
      */
     public function welcome()
     {
-        return view("Gerent::dashboard-gerent");      
+        return view("Prestataire::profile");
     }
 }
