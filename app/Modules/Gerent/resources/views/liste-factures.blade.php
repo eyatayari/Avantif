@@ -13,12 +13,12 @@ Liste des Factures
 
 @section('content')
 <div class="btn-ajout">
-    <button type="submit" class="btn my-btn">Ajouter Facture</button>
+    <button type="submit" class="btn add-btn">+</button>
   </div>
 
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
+  <table id="example" class="table  table-bordered" style="width:100%">
     <thead>
-        <tr>
+        <tr >
             
             <th>Réf</th>
             <th>code client</th>
@@ -37,11 +37,12 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
+            <td></td>
+             <td id="actionBox">
+             
+                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+            </td> 
 
             
         </tr>
@@ -52,11 +53,12 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
+            <td></td>
+             <td id="actionBox">
+             
+                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+            </td> 
         </tr>
         <tr>
              
@@ -65,11 +67,12 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
+            <td></td>
+             <td id="actionBox">
+             
+                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+            </td> 
         </tr>
         <tr>
              
@@ -78,25 +81,13 @@ Liste des Factures
             <td>Edinburgh</td> 
             <td>61</td>
             <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
+            <td></td>
+             <td id="actionBox">         
+                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+            </td> 
         </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
+       
   
        
         
