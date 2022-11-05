@@ -2,9 +2,23 @@
   $('#example').DataTable(
       
        {     
-
-    "aLengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
-      "iDisplayLength": 5
+        "responsive" : true,
+        
+        "language": {
+         
+          "searchPlaceholder" : "Rechercher" ,
+          "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/French.json",
+          "search": "",
+          
+      },
+      
+      "dom": 'Bfrtip',
+      "buttons": [
+            
+        'pdfHtml5',
+        'print',
+        'colvis'
+    ]
      } 
       );
 
