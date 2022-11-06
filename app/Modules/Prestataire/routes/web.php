@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('prestataire', 'PrestataireController@welcome');
+Route::get('prestataire', 'PrestataireController@welcome')->name("prestataire");
