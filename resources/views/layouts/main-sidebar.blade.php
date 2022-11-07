@@ -57,12 +57,12 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{route("all-product")}}">
               <i class="bi bi-circle"></i><span>Liste des produits</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{route("add-product")}}">
               <i class="bi bi-circle"></i><span>Ajouter produit</span>
             </a>
           </li>
