@@ -2,4 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('facture', 'FactureController@welcome');
+Route::get('factures', 'FactureController@GetAllFactures')->name("all-facture");

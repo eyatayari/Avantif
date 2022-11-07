@@ -3,6 +3,7 @@
 namespace App\Modules\Facture\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Facture\Models\Facture;
 use Illuminate\Http\Request;
 
 class FactureController extends Controller
@@ -13,8 +14,8 @@ class FactureController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function welcome()
-    {
-        return view("Facture::welcome");
+    public function GetAllFactures()
+    {$factures=Facture::with("client","prestataire")->paginate(8);
+        return view("Facture::liste-factures");
     }
 }

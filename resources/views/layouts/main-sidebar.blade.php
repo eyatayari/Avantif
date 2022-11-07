@@ -16,12 +16,12 @@
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{route("list-prestataire")}}">
               <i class="bi bi-circle"></i><span>Liste des prestataires</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{route('add-prestataire')}}">
               <i class="bi bi-circle"></i><span>Ajouter Prestatire</span>
             </a>
           </li>
@@ -46,7 +46,7 @@
         </ul>
       </li><!-- End Forms Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route("all-facture")}}">
           <i class="bi bi-grid"></i>
           <span>Factures</span>
         </a>

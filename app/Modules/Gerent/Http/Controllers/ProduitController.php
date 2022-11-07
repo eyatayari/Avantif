@@ -29,6 +29,7 @@ class ProduitController extends Controller
             $file->move(public_path('img/produits'), $picture);
             $produit->photo_produit =  $picture;
         }
+        $produit->save();
 
     }
 }
