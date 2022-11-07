@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Modules\Gerent\Http\Controllers;
+namespace App\Modules\Client\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class GerentController extends Controller
+class ClientController extends Controller
 {
 
     /**
@@ -15,7 +15,6 @@ class GerentController extends Controller
      */
     public function welcome()
     {
-        return view("Gerent::ajout-client");      
+        return view("Client::liste-factures");
     }
-
 }
