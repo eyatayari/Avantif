@@ -1,5 +1,9 @@
+<<<<<<< HEAD:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
+@extends('layouts.master')
+=======
 @extends('gerant.layouts.master')
 @include('layouts.sidebar-gerent')
+>>>>>>> d5d57214606dba847c87d56471a752f7fec88bdf:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
 @section('title-page')
 Dashobard
 @stop
