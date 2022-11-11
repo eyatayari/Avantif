@@ -19,7 +19,7 @@ class Relations extends Migration
             // relation enseignant etablissement
 
             //relation typeEtablissement etablissement
-            $table->foreign('prestation_id')->references('id')->on('prestation');
+            $table->foreign('prestation_id')->references('id')->on('prestations');
             $table->foreign('product_id')->references('id')->on('produits');
             $table->foreign('client_id')->references('id')->on('clients');
 
