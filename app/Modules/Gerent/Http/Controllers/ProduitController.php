@@ -13,8 +13,9 @@ class ProduitController extends Controller
     }
     public function GetAllProduct(){
 
-        $produits= produit::all();
-        return view("Gerent::liste-produits")->with("produits",$produits);
+        $produits= produit::all()->groupBy("categorie");
+        var_dump($produits);
+        return view("Gerent::produits-gerent")->with("produits",$produits);
     }
 
     public function AddProduct(Request $request){

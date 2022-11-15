@@ -1,9 +1,6 @@
-<<<<<<< HEAD:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
+
 @extends('layouts.master')
-=======
-@extends('gerant.layouts.master')
 @include('layouts.sidebar-gerent')
->>>>>>> d5d57214606dba847c87d56471a752f7fec88bdf:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
 @section('title-page')
 Dashobard
 @stop
@@ -39,7 +36,8 @@ Dashobard
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
             <h4>Informations Prestatire</h4>
-            <form>
+            <form action="{{route("store-prestataire")}}">
+              @Csrf
               <div class="row mb-3">
                 
                   <div class="form-check form-switch">

@@ -2,8 +2,9 @@
 @include('layouts.sidebar-gerent')
 
 @section('content')
-  
 
+  @foreach ($produits as $categorie  => $produit_cat)
+    {{$categorie}}
 <div class="card">
     <div class="card-body">
       <h5 class="card-title"></h5>
@@ -30,6 +31,7 @@
           </li>
           
       </ul>
+
       <div class="btn-ajout">
         <button type="button" class="btn add-btn" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable">+</button>
       </div>
@@ -56,7 +58,6 @@
 
      
 
-     
         </div>
       </div>
 
@@ -151,4 +152,5 @@
 
     </div>
   </div>
+  @endforeach
 @stop
