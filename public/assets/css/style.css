@@ -27,6 +27,7 @@ label {
 .nav-pills .nav-link.active{
   background: #ce152b!important; 
   color:white;
+  border-radius: 0;
 
 }
 .nav-pills .nav-link{
@@ -50,7 +51,7 @@ label {
   color:white;
   transition-duration: 0.4s;
   margin: 5px;
-  border-radius: 50%;
+  border-radius: 0;
   height: 40px;
   width: 40px;
   font-weight: 500;
@@ -72,7 +73,7 @@ a.mylink{
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "roboto", sans-serif;
   background: #f7f7f7;
   color: #444444;
 
@@ -300,7 +301,7 @@ h6 {
 .card {
   margin-bottom: 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0px;
   box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
 }
 
@@ -427,8 +428,9 @@ h6 {
 
 .nav-tabs-bordered .nav-link.active {
   background-color: #fff;
-  color: #ce152b;
-  border-bottom: 2px solid #ce152b;
+  color: #dd0330;
+  border-bottom: 2px solid #dd0330;
+  font-size: 19px;
 }
 
 /*--------------------------------------------------------------
@@ -445,10 +447,9 @@ h6 {
 }
 
 .logo img {
-  max-height: 46px;
-  margin-right: 6px;
+  max-height: 40px;
+  margin-left: 25px;
 }
-
 
 
 .header {
@@ -506,7 +507,7 @@ h6 {
   color: #012970;
   border: 1px solid rgba(1, 41, 112, 0.2);
   padding: 7px 38px 7px 8px;
-  border-radius: 3px;
+  border-radius: 0px;
   transition: 0.3s;
   width: 100%;
 }
@@ -567,6 +568,7 @@ h6 {
   font-weight: normal;
   font-size: 12px;
   padding: 3px 6px;
+  border-radius: 0px;
 }
 
 .header-nav .notifications {
@@ -763,7 +765,7 @@ h6 {
   transition: 0.3;
   background: #f6f9ff;
   padding: 10px 15px;
-  border-radius: 4px;
+  border-radius: 0px;
 }
 
 .sidebar-nav .nav-link i {
@@ -1073,7 +1075,8 @@ h6 {
 # Profie Page
 --------------------------------------------------------------*/
 .profile .profile-card img {
-  max-width: 120px;
+  max-width: inherit;
+  width: -webkit-fill-available;
 }
 
 .profile .profile-card h2 {
@@ -1306,9 +1309,12 @@ h6 {
   border-top: 1px solid #cddfff;
 }
 
-.footer .copyright {
-  text-align: center;
-  color: #012970;
+
+  .footer .copyright {
+    text-align: -webkit-left;
+    color: grey;
+    margin-left: 40px;
+
 }
 
 .footer .credits {
@@ -1326,8 +1332,14 @@ h6 {
 }
 
 #example_filter input { 
-  border-radius: 18px;
-    width: 220px;
+  border-radius: 0;
+  width: 220px;
+  background: url(https://icones.pro/wp-content/uploads/2021/02/loupe-et-icone-de-recherche-de-couleur-grise.png);
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-position: 15px 5px !important;
+  background-size: 10%;
+  padding-left: 45px;
 }
 
 
@@ -1355,7 +1367,7 @@ h6 {
     text-decoration: none;
     padding: 10px;
     margin: 5px 5px;
-    border-radius: 50%;
+    border-radius: 0%;
 }
 
 #actionBox{
@@ -1370,6 +1382,14 @@ h6 {
 .btnEdit{
   background: #e9f2ff;
   color: #819ac9;
+}
+
+.btnUpload{
+  background: #e9f2ff;
+    border-radius: 0;
+    color: #819ac9;
+    padding: 8px;
+    border: #cbcbcb 1px solid;
 }
 
 thead tr th {
@@ -1390,6 +1410,125 @@ border-radius: 20px;
 }
 
 .active>.page-link, .page-link.active {
-  background-color: #d5d5d5;
-  border-color:#d5d5d5;
+  background-color: #ebebeb;
+  border-color: #d5d5d5;
+  color: #cc152c;
+
+}
+
+td{ background-color: white;
+}
+
+.dataTables_info{
+  font-size: 14px;
+}
+
+.pagetitle h1 {
+  padding-left: 12px;
+  font-weight: 700;
+  font-size: 30px;
+margin-top: 15px;
+}
+
+.profile .profile-edit #photos  {
+
+    width: 320px;
+    max-width: 700px;
+}
+
+label span {
+  font-size: 14px;
+  font-weight: 300;
+  color: #747272;
+  display: contents;
+
+}
+
+.profile .profile-edit label {
+  font-weight: 600;
+  color: grey;
+ 
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.btn-submit{
+  width: -webkit-fill-available;
+  border-radius: 0;
+  background: #ce152b;
+  border: none;
+  padding: 10px;
+  color: white;
+  margin-top: 5px;
+}
+
+.form-switch .form-check-input {
+  width: 4em;
+  margin-right: 10px;
+  height: 2m;
+  margin-left: -2.5em;
+  
+}
+
+.form-check-input {
+  width: 5em;
+  height: 2em;
+}
+
+.addRInputs{
+  max-width: 200px;
+}
+
+.ADD{
+  width: 40px;
+  height: 40px;
+  background: #e9f2ff;
+    border-radius: 0;
+    color: #819ac9;
+    padding: 8px;
+    border: #cbcbcb 1px solid;
+}
+
+.REMOVE{
+  width: 40px;
+  height: 40px;
+  background: #ffd4dd;
+  border-radius: 0;
+  color: #dd0330;
+  padding: 8px;
+  border: #cbcbcb 1px solid;
+}
+
+.buttonsGroup{
+  text-align: -webkit-right;
+}
+
+#dataTable{
+  display: block;
+  padding: 12px;
+}
+
+.btn-groupy{
+  
+    margin-left: auto;
+    margin-top: -31px;
+    position: inherit;
+}
+.form-select {
+  border-radius: 0;
+ }
+
+ .card2 {
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0px 0 30px rgb(1 41 112 / 10%);
+}
+
+.card-sec{
+  display: flex;
+  display: flex;
+    place-content: space-between;
+    align-items: center;
 }
