@@ -17,4 +17,5 @@ class GerentController extends Controller
     {
         return view("Gerent::ajout-facture");      
     }
+
 }

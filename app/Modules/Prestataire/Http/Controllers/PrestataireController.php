@@ -3,6 +3,7 @@
 namespace App\Modules\Prestataire\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 
 class PrestataireController extends Controller
@@ -13,8 +14,17 @@ class PrestataireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function welcome()
+
+    public function GetListPrestataires()
     {
-        return view("Prestataire::profile");
+        $prestataires = Prestataire::all();
+        return view("Prestataire::liste-prestataires")->with("prestataires", $prestataires);
+    }
+
+    public function GetAddPrestatairePage()
+    {
+        return view("Prestataire::ajout-prestataire");
+
+
     }
 }
