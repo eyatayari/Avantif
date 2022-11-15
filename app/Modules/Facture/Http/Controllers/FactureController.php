@@ -25,4 +25,7 @@ class FactureController extends Controller
 
         return redirect()->route("all-factures");
     }
+    public function DisplayAddFacture(){
+        return view("Facture::ajout-facture");
+    }
 }

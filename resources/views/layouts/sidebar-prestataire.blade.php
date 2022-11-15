@@ -41,12 +41,12 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
+            <a href="{{route("all-factures")}}">
               <i class="bi bi-circle"></i><span>Liste factures</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="{{route("add-facture")}}">
               <i class="bi bi-circle"></i><span>Ajouter facture</span> 
             </a>
           </li>
@@ -59,7 +59,7 @@
         </a>
       </li><!-- End factures Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="{{route("all-product")}}">
           <i class="bi bi-basket"></i><span>Produits</span>
         </a>
        

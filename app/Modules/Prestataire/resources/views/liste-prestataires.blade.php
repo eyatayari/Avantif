@@ -1,4 +1,4 @@
-@extends('gerant.layouts.master')
+@extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
 Dashobard
@@ -9,6 +9,7 @@ Dashobard
 @stop
 
 @section('content')
+
 <div class="btn-ajout">
     <button type="submit" class="btn my-btn">Ajouter client</button>
   </div>
@@ -26,53 +27,20 @@ Dashobard
         </tr>
     </thead>
     <tbody>
+
+        @foreach($prestataires as $prestataire)
         <tr>
              
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
+            <td>{{$prestataire->nom}}</td>
+            <td>{{$prestataire->prenom}}</td>
+            <td>{{$prestataire->email}}</td>
+            <td></td>
             <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
         </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-        </tr>
-  
-       
+        @endforeach
+
+
+
         
      
      
