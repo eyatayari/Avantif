@@ -29,20 +29,19 @@
       </li><!-- End Components Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed"  href="#">
+        <a class="nav-link collapsed"  href="{{route("get-clients")}}">
           <i class="bi bi-people"></i><span>Clients</span>
         </a>
     
       </li><!-- End Forms Nav -->
       <li class="nav-item">
 
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-grid"></i>
+
         <a class="nav-link collapsed" href="{{route("all-factures")}}">
           <i class="bi bi-journal-text"></i>
           <span>Factures</span>
         </a>
-        </a>
+
       </li><!-- End factures Nav -->
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="{{route("all-product")}}">

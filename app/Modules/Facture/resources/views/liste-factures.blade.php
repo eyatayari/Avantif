@@ -38,7 +38,8 @@
             <td>{{$facture->prestation->id}}</td>
             <td>{{$facture->totalFacture}}</td>
             <td>{{$facture->DateFacture}}</td>
-            <td></td>
+            <td>{{$facture->mode_paiement}}</td>
+
             <td id="actionBox">
 
                 <a id="actionBtn" class=" btnDelete" href="{{route("delete-facture",['numFacture'=>$facture->numFacture])}}"><i class="bi bi-trash3"></i></a>
@@ -48,50 +49,6 @@
 
         </tr>
         @endforeach
-        <tr>
-
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td></td>
-            <td id="actionBox">
-
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td></td>
-            <td id="actionBox">
-
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td></td>
-            <td id="actionBox">
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-
-
-
 
 
 

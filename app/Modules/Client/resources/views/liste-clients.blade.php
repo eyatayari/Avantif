@@ -30,14 +30,15 @@ Liste des clients
         </tr>
     </thead>
     <tbody>
+    @foreach($clients as $client)
         <tr>
              
-            <td>Tiger Nixon</td>
+            <td>{{$client->id}}</td>
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
+            <td><a href="{{route("FactureById",[$client->id])}}"><i class="bi bi-menu-button-wide"></i></a></td>
             <td>
                 <a href="#"><i class="bi bi-trash3"></i></a>
                 <a href="#"><i class="bi bi-pen"></i></a>
@@ -45,60 +46,8 @@ Liste des clients
 
             
         </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td> 
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><a href="#"><i class="bi bi-menu-button-wide"></i></a></td>
-            <td>
-                <a href="#"><i class="bi bi-trash3"></i></a>
-                <a href="#"><i class="bi bi-pen"></i></a>
-            </td>
-        </tr>
-  
-       
+        @endforeach
+
         
      
      
