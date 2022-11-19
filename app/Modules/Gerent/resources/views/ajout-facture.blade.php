@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master') 
 
 @include('layouts.sidebar-prestataire')
 @section('title-page')
