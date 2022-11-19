@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Liste des factures
+Liste des factures 
 @stop
 
 @section('prev-page')
@@ -37,7 +37,7 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-danger">non payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -53,7 +53,7 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -67,7 +67,7 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -81,7 +81,7 @@ Liste des Factures
             <td>Edinburgh</td> 
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">         
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
                 <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>

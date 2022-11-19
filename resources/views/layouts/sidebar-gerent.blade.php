@@ -11,12 +11,12 @@
       </li><!-- End Dashboard Nav -->
       <li class="nav-heading">Modules</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" >
           <i class="bi bi-person"></i><span>Prestataires</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{route("list-prestataire")}}">
+            <a href="#">
               <i class="bi bi-circle"></i><span>Liste des prestataires</span>
             </a>
           </li>
@@ -36,8 +36,6 @@
       </li><!-- End Forms Nav -->
       <li class="nav-item">
 
-        <a class="nav-link collapsed" href="{{route("all-facture")}}">
-          <i class="bi bi-grid"></i>
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-journal-text"></i>
           <span>Factures</span>
@@ -45,22 +43,10 @@
         </a>
       </li><!-- End factures Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-basket"></i><span>Produits</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="{{route("all-product")}}">
+          <i class="bi bi-basket"></i><span>Produits</span>
         </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{route("all-product")}}">
-              <i class="bi bi-circle"></i><span>Liste des produits</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{route("add-product")}}">
-              <i class="bi bi-circle"></i><span>Ajouter produit</span>
-            </a>
-          </li>
-          
-        </ul>
+       
       </li><!-- End Icons Nav -->
 
 
