@@ -30,19 +30,10 @@ Liste des Factures
         </tr>
     </thead>
     <tbody>
+    @foreach($factures as $facture)
         <tr>
              
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-danger">non payé</span></td>
-             <td id="actionBox">
-             
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
-            </td> 
+
 
 
             <td>{{$facture->numFacture}}</td>
@@ -61,7 +52,7 @@ Liste des Factures
 
         </tr>
 
-
+    @endforeach
 
 
 
@@ -69,62 +60,6 @@ Liste des Factures
 
     </table>
 
-
-            
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
-             <td id="actionBox">
-             
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
-            </td> 
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
-             <td id="actionBox">
-             
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
-            </td> 
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td> 
-            <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
-             <td id="actionBox">         
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
-                
-               
-            </td> 
-        </tr>
-       
-  
-       
-        
-     
-
-      
-    </tbody>
-  
-</table>
 
 
 @stop
