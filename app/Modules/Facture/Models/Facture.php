@@ -2,15 +2,30 @@
 
 namespace App\Modules\Facture\Models;
 
+use App\Modules\Client\Models\Client;
+use App\Modules\Gerent\Models\produit;
 use App\Modules\Prestataire\Models\Prestataire;
+use App\Modules\Prestataire\Models\prestation;
 use Illuminate\Database\Eloquent\Model;
 
 class Facture extends Model
 {
+    protected $fillable=[
+        'numFacture',
+        'DateFacture',
+        'mode_paiement',
+        'notes',
+        'totalFacture',
+        'prestation_id',
+        'product_id',
+        'client_id',
+    ];
+    public function prestation(){
+       return $this->belongsTo(prestation::class,"prestation_id","id");
+    }
     public function client(){
-        //$this->belongsTo
+        return$this->belongsTo(Client::class);
     }
-    public function prestataire(){
-        $this->belongsTo(Prestataire::class);
-    }
+    public function produits(){
+        return $this->hasMany(produit::class);}
 }

@@ -21,6 +21,9 @@ class CreateFacturesTable extends Migration
             $table->string('mode_paiement');
             $table->string('notes');
             $table->float("totalFacture");
+            $table->integer("prestation_id");
+            $table->integer("product_id");
+            $table->integer("client_id");
             $table->timestamps();
         });
     }

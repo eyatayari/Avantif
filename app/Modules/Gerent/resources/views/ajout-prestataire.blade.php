@@ -1,3 +1,7 @@
+<<<<<<< HEAD:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
+=======
+
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
@@ -37,6 +41,7 @@ Ajouter client
         <div class="card">
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
+<<<<<<< HEAD:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
           <div style="display: flex;place-content: space-between;">
             <h4 class="pt-2">Informations Prestataire</h4>
             <div class="form-check form-switch">
@@ -52,6 +57,22 @@ Ajouter client
             <form>
              
               
+=======
+            <h4>Informations Prestatire</h4>
+            <form action="{{route("store-prestataire")}}">
+              @Csrf
+              <div class="row mb-3">
+                
+                  <div class="form-check form-switch">
+                      <label for="inputText" class="col-sm-2 col-form-label">Active</label>
+                      
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                      
+               
+                   
+                </div>
+              </div>
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 
                 <div class="row mb-3">
                  

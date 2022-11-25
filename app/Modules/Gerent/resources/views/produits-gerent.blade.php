@@ -2,8 +2,13 @@
 @include('layouts.sidebar-gerent')
 
 @section('content')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa
 
+  @foreach ($produits as $categorie  => $produit_cat)
+    {{$categorie}}
 <div class="card">
     <div class="card-body">
       <h5 class="card-title"></h5>
@@ -371,5 +376,10 @@
          
 
     </div>
+<<<<<<< HEAD
 
+=======
+  </div>
+  @endforeach
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa
 @stop
