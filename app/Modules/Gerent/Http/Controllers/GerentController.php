@@ -15,7 +15,7 @@ class GerentController extends Controller
      */
     public function welcome()
     {
-        return view("Gerent::ajout-facture");        
+        return view("Gerent::liste-factures");         
     } 
 
 }

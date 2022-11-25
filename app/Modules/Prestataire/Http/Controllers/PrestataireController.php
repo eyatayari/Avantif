@@ -17,7 +17,7 @@ class PrestataireController extends Controller
 
     public function welcome()
     {
-        return view("Prestataire::dashboard-prestataire");         
+        return view("Prestataire::produits-prestataire");         
     } 
     
 }

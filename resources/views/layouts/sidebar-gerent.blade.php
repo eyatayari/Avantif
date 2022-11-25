@@ -63,7 +63,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Déconnexion </span>
         </a>
       </li><!-- End Login Page Nav -->
 

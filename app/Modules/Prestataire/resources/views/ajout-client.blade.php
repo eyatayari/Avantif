@@ -1,29 +1,28 @@
-<<<<<<< HEAD:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 @extends('layouts.master')
-=======
-@extends('gerant.layouts.master')
-@include('layouts.sidebar-gerent')
->>>>>>> d5d57214606dba847c87d56471a752f7fec88bdf:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
+@include('layouts.sidebar-prestataire')
 @section('title-page')
-Dashobard
+Ajouter client 
 @stop
 
+@section('prev-page')
+Clients
+@stop 
 @section('active-page')
-Dashobard
+Ajouter client
 @stop
 
 @section('content')
 
-<section class="section profile">
+<section class="section profile"> 
     <div class="row">
       <div class="col-xl-3">
 
         <div class="card">
-          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <div class="pt-2">
-              <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-              <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+          <div class="card-body profile-card pt-3 d-flex flex-column align-items-center">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="">
+            <div class="btn-groupy" >
+              <a href="#" class="ADD btn-sm AddRemove" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+              <a href="#" class="REMOVE btn-sm AddRemove" title="Remove my profile image"><i class="bi bi-trash"></i></a>
             </div>
             
             
@@ -38,19 +37,21 @@ Dashobard
         <div class="card">
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
-            <h4>Informations Prestatire</h4>
+          <div style="display: flex;place-content: space-between;">
+            <h4 class="pt-2">Informations client</h4>
+            <div class="form-check form-switch">
+              <label for="inputText" class="col-sm-2 col-form-label" style="
+              margin-top: 0;
+               ">Active</label>
+            
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            </div>
+          </div>
+
+
             <form>
-              <div class="row mb-3">
-                
-                  <div class="form-check form-switch">
-                      <label for="inputText" class="col-sm-2 col-form-label">Active</label>
-                      
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                      
-               
-                   
-                </div>
-              </div>
+             
+              
 
                 <div class="row mb-3">
                  
@@ -121,7 +122,25 @@ Dashobard
                 
                   
                 </div>
-            
+                <h4 class="pt-5">Personne référente</h4>
+
+                <div class="row mb-3">
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nom </label>
+                    <input type="text" class="form-control">
+                  </div>
+                 
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Email </label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Mobile </label>
+                    <input type="text" class="form-control"required>
+                  </div>
+                
+                  
+                </div>
 
 
 
@@ -133,8 +152,8 @@ Dashobard
           
 
               </form><!-- End General Form Elements -->
-              <div class="text-center">
-                <button type="submit" class="btn my-btn">Ajouter Client</button>
+              <div class="text-center pt-4">
+                <button type="submit" class=" btn-submit ">Ajouter client</button>
               </div>
           </div>
         </div>
@@ -142,4 +161,4 @@ Dashobard
       </div>
     </div>
   </section>
-@stop
+@stop  

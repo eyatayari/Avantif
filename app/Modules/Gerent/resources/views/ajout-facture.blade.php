@@ -46,6 +46,12 @@ Ajouter facture
                   <!-- Profile Edit Form -->
                   <form>
                     <div class="row mb-3">
+                      <label for="about" class="col-md-4 col-lg-3 col-form-label">Facture N°</label>
+                      <div class="col-md-8 col-lg-9">
+                        <span> 0000333 </span>
+                      </div>
+                    </div>
+                    <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Photos                       <span> Types de fichiers autorisés : png, jpg, jpeg </span>
                       </label>
                       <div class="col-md-4 col-lg-4" >
@@ -61,12 +67,7 @@ Ajouter facture
                         </div>
                       </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="about" class="col-md-4 col-lg-3 col-form-label">Facture N°</label>
-                        <div class="col-md-8 col-lg-9">
-                          <input type="number" name="about" class="form-control" id="about"/>
-                        </div>
-                      </div>
+                   
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Date</label>
                       <div class="col-md-8 col-lg-9">
@@ -76,26 +77,33 @@ Ajouter facture
 
                     
 
-                    <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Salarié(e)</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company" value="">
-                      </div>
-                    </div>
+                     
 
                    
 
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Client</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="country" type="text" class="form-control" id="Country" value="">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Samar mediouni</option>
+                          <option value="1">Siwar mediouni</option>
+                          <option value="2">salwa bejaoui</option>
+                        
+                         
+                        </select>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Mode de paiement</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="address" type="text" class="form-control" id="Address" value="">
+                        <select class="form-select" aria-label="Default select example">
+                          <option selected>Espéces</option>
+                          <option value="1">Virement</option>
+                          <option value="2">Chéques</option>
+                        
+                         
+                        </select>
                       </div>
                     </div>
 

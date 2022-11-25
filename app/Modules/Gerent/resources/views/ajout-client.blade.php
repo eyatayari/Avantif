@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@include('layouts.sidebar-prestataire')
+@include('layouts.sidebar-gerent')
 @section('title-page')
 Ajouter client 
 @stop
@@ -13,7 +13,7 @@ Ajouter client
 
 @section('content')
 
-<section class="section profile">
+<section class="section profile"> 
     <div class="row">
       <div class="col-xl-3">
 
