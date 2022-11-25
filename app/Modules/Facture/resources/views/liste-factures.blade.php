@@ -44,7 +44,7 @@ Liste des Factures
                 <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
             </td> 
 
-<<<<<<< HEAD
+
             <td>{{$facture->numFacture}}</td>
             <td>{{$facture->client->id}}</td>
             <td>{{$facture->prestation->id}}</td>
@@ -60,7 +60,7 @@ Liste des Factures
 
 
         </tr>
-        @endforeach
+
 
 
 
@@ -68,7 +68,8 @@ Liste des Factures
         </tbody>
 
     </table>
-=======
+
+
             
         </tr>
         <tr>
@@ -119,11 +120,11 @@ Liste des Factures
        
         
      
-     
+
       
     </tbody>
   
 </table>
->>>>>>> 1bbb954ac405255bce3efeb6186d8d5a32510b6e
+
 
 @stop
