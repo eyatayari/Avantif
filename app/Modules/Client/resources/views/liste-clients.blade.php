@@ -30,13 +30,15 @@ Liste des clients
         </tr>
     </thead>
     <tbody>
+    @foreach($clients as $client)
         <tr>
              
-            <td>Tiger Nixon</td>
+            <td>{{$client->id}}</td>
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
+
             <td><span class="badge rounded-pill bg-danger">hors service</span> </td>
              <td id="actionBox">
              
@@ -90,6 +92,7 @@ Liste des clients
        
   
        
+@endforeach
         
      
      

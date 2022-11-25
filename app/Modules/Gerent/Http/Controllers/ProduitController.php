@@ -14,7 +14,7 @@ class ProduitController extends Controller
     public function GetAllProduct(){
 
         $produits= produit::all()->groupBy("categorie");
-        var_dump($produits);
+        
         return view("Gerent::produits-gerent")->with("produits",$produits);
     }
 
