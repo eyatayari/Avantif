@@ -4,85 +4,90 @@
     <head>
         <meta charset="utf-8">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-      
-        
-      
         @include('layouts.head')
       </head>
-
+<style type="text/css">
+    .btn-login {
+    background-color: #ce152b; 
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    width: auto;
+    min-width: 100px;
+    border-radius: 0px;
+    text-align: center;
+    box-shadow: 0px 2px 6px -1px rgb(0 0 0 / 13%);
+    margin-top: 42px;}
+    .my-form{
+      font-size: 16px;
+    padding: 20px 0px;
+    height: 56px;
+    border: none;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    
+    }
+    .card-login{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+    max-width: 600px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 0px;
+    box-shadow: 0px 0 30px rgba(1, 41, 112, 0.1);
+    background-color: white;
+    }
+    @media screen and (max-width: 900px) {
+  .img-web {
+    display:none;
+  }
+}
+</style>
 <body>
-
-  <main class="login-page">
-    <div class="container">
-
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  
-                </a>
-              </div><!-- End Logo -->
-              <div class="card mb-3">
-
-                <div class="card-body">
-
-                  <div class="pt-4 pb-2">
-                    
-                  </div>
-
-                  <form class="row g-3 needs-validation" novalidate>
-
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label">Nom d'utilisateur</label>
-                      <div class="input-group has-validation">
-                        
-                        <input type="text" name="username" class="form-control" id="yourUsername" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label">Mot de passe</label>
-                      <input type="password" name="password" class="form-control" id="yourPassword" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Se souvenir de moi </label>
-                      </div>
-                    </div>
-                    <div class="col-12 text-center" >
-                     
-                      <button type="button" class="btn my-btn rounded-pill">Success</button>
-                    </div>
-                    <div class="col-12">
-                        <a href="#" class="my-link"><p class="small mb-0">Vous avez oublié votre mot de passe ?</p></a>
-                            
-                      </div>
-                    
-                  </form>
-
-                </div>
-              </div>
-
-      
-
-              
-
-            </div>
-          </div>
+  
+    <div class="container py-5 h-100 card-login">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6 img-web">
+          <img src="assets/img/login-illust.png"
+            class="img-fluid" alt="Phone image">
         </div>
-
-      </section>
-
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+         
+            <a href="index.html" class="logo">
+              <img src="assets/img/logo.png" alt="">
+              
+            </a>
+     
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4"> 
+              
+              <input type="email" id="form1Example13" class="form-control my-form" placeholder="Nom utilisateur"/>
+              
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form1Example23" class="form-control my-form" placeholder="Mot de passe"/>
+              
+            </div>
+  
+          
+  
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-login">Sign in</button>
+  
+            
+  
+          </form>
+        </div>
+      </div>
     </div>
-  </main><!-- End #main -->
+
+
+  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
   @include('layouts.scripts')

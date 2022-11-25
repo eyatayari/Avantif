@@ -1,12 +1,18 @@
+<<<<<<< HEAD:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
+=======
 
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Dashobard
+Ajouter prestataire
 @stop
 
+@section('prev-page')
+Clients
+@stop 
 @section('active-page')
-Dashobard
+Ajouter client
 @stop
 
 @section('content')
@@ -16,11 +22,11 @@ Dashobard
       <div class="col-xl-3">
 
         <div class="card">
-          <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <div class="pt-2">
-              <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-              <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+          <div class="card-body profile-card pt-3 d-flex flex-column align-items-center">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="">
+            <div class="btn-groupy" >
+              <a href="#" class="ADD btn-sm AddRemove" title="Upload new profile image"><i class="bi bi-upload"></i></a>
+              <a href="#" class="REMOVE btn-sm AddRemove" title="Remove my profile image"><i class="bi bi-trash"></i></a>
             </div>
             
             
@@ -35,6 +41,23 @@ Dashobard
         <div class="card">
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
+<<<<<<< HEAD:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
+          <div style="display: flex;place-content: space-between;">
+            <h4 class="pt-2">Informations Prestataire</h4>
+            <div class="form-check form-switch">
+              <label for="inputText" class="col-sm-2 col-form-label" style="
+              margin-top: 0;
+               ">Active</label>
+            
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            </div>
+          </div>
+
+
+            <form>
+             
+              
+=======
             <h4>Informations Prestatire</h4>
             <form action="{{route("store-prestataire")}}">
               @Csrf
@@ -49,6 +72,7 @@ Dashobard
                    
                 </div>
               </div>
+>>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 
                 <div class="row mb-3">
                  
@@ -119,7 +143,7 @@ Dashobard
                 
                   
                 </div>
-            
+               
 
 
 
@@ -131,8 +155,8 @@ Dashobard
           
 
               </form><!-- End General Form Elements -->
-              <div class="text-center">
-                <button type="submit" class="btn my-btn">Ajouter Client</button>
+              <div class="text-center pt-4">
+                <button type="submit" class=" btn-submit ">Ajouter Prestataire</button>
               </div>
           </div>
         </div>
@@ -140,4 +164,4 @@ Dashobard
       </div>
     </div>
   </section>
-@stop
+@stop  

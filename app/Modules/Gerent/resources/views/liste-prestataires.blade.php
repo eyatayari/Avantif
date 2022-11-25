@@ -1,14 +1,11 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Liste des clients
+Liste des prestataires
 @stop
 
-@section('prev-page')
-Factures
-@stop 
 @section('active-page')
-Liste des clients 
+Dashobard
 @stop
 
 @section('content')
@@ -20,26 +17,24 @@ Liste des clients
     <thead>
         <tr >
             
-            <th>code client</th>
+            <th>Code prestataire</th>
             <th>Nom et prénom</th>
-            <th>Téléphone </th> 
+            <th>Téléphone</th>
             <th>Email</th>
-            <th>Personne référente </th>
-            <th>statut</th>
+            
+            <th>Statut</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-    @foreach($clients as $client)
         <tr>
              
-            <td>{{$client->id}}</td>
-            <td>System Architect</td>
+            <td>0005</td>
+            <td>samar</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
-
-            <td><span class="badge rounded-pill bg-danger">hors service</span> </td>
+            
+            <td><span class="badge rounded-pill bg-danger">hors service</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -54,7 +49,7 @@ Liste des clients
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
+            
             <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">
              
@@ -68,7 +63,7 @@ Liste des clients
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
+            
             <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">
              
@@ -82,7 +77,7 @@ Liste des clients
             <td>System Architect</td>
             <td>Edinburgh</td> 
             <td>61</td>
-            <td>2011/04/25</td>
+            
             <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">         
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -92,7 +87,6 @@ Liste des clients
        
   
        
-@endforeach
         
      
      
@@ -100,5 +94,4 @@ Liste des clients
     </tbody>
   
 </table>
-
 @stop

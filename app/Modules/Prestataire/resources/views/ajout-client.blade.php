@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@include('layouts.sidebar-gerent')
+@include('layouts.sidebar-prestataire')
 @section('title-page')
 Ajouter client 
 @stop

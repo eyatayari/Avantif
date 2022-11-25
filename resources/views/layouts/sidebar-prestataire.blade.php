@@ -52,12 +52,7 @@
           </li>
         </ul>
       </li><!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-journal-text"></i>
-          <span>Mes prestations</span>
-        </a>
-      </li><!-- End factures Nav -->
+      
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="{{route("all-product")}}">
           <i class="bi bi-basket"></i><span>Produits</span>
@@ -79,7 +74,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Déconnexion </span>
         </a>
       </li><!-- End Login Page Nav -->
 

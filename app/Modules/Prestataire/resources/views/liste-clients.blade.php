@@ -1,15 +1,14 @@
 @extends('layouts.master')
-@include('layouts.sidebar-gerent')
+@include('layouts.sidebar-prestataire')
 @section('title-page')
 Liste des clients
 @stop
 
-@section('prev-page')
-Factures
-@stop 
 @section('active-page')
-Liste des clients 
+Liste des clients
 @stop
+
+
 
 @section('content')
 <div class="btn-ajout">
@@ -20,7 +19,7 @@ Liste des clients
     <thead>
         <tr >
             
-            <th>code client</th>
+            <th>Code client</th>
             <th>Nom et prénom</th>
             <th>Téléphone </th> 
             <th>Email</th>
@@ -30,15 +29,13 @@ Liste des clients
         </tr>
     </thead>
     <tbody>
-    @foreach($clients as $client)
         <tr>
              
-            <td>{{$client->id}}</td>
+            <td>Tiger Nixon</td>
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-
             <td><span class="badge rounded-pill bg-danger">hors service</span> </td>
              <td id="actionBox">
              
@@ -92,7 +89,6 @@ Liste des clients
        
   
        
-@endforeach
         
      
      
@@ -101,4 +97,4 @@ Liste des clients
   
 </table>
 
-@stop
+@stop 

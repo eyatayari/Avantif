@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Liste des factures
+Liste des factures 
 @stop
 
 @section('prev-page')
@@ -20,8 +20,8 @@ Liste des Factures
     <thead>
         <tr >
             
-            <th>Réf</th>
-            <th>code client</th>
+            <th>Num facture</th>
+            <th>Code client</th>
             <th>Code prestataire</th>
             <th>Total TTC</th>
             <th>Date </th>
@@ -37,11 +37,11 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-danger">non payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
             </td> 
 
             
@@ -53,11 +53,11 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
             </td> 
         </tr>
         <tr>
@@ -67,11 +67,11 @@ Liste des Factures
             <td>Edinburgh</td>
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
             </td> 
         </tr>
         <tr>
@@ -81,10 +81,12 @@ Liste des Factures
             <td>Edinburgh</td> 
             <td>61</td>
             <td>2011/04/25</td>
-            <td></td>
+            <td><span class="badge rounded-pill bg-success">payé</span></td>
              <td id="actionBox">         
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
+                
+               
             </td> 
         </tr>
        
