@@ -16,7 +16,7 @@
         </a>
         <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="{{route("list-prestataire")}}">
+            <a href="{{route('list-prestataire')}}">
               <i class="bi bi-circle"></i><span>Liste des prestataires</span>
             </a>
           </li>
@@ -44,22 +44,10 @@
 
       </li><!-- End factures Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="{{route("all-product")}}">
-          <i class="bi bi-basket"></i><span>Produits</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed"  href="{{route("all-product")}}">
+          <i class="bi bi-basket"></i><span>Produits</span>
         </a>
-        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{route("all-product")}}">
-              <i class="bi bi-circle"></i><span>Liste des produits</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{route("add-product")}}">
-              <i class="bi bi-circle"></i><span>Ajouter produit</span>
-            </a>
-          </li>
-          
-        </ul>
+       
       </li><!-- End Icons Nav -->
 
 
@@ -76,7 +64,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="#">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Déconnexion </span>
         </a>
       </li><!-- End Login Page Nav -->
 

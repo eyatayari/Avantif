@@ -13,7 +13,7 @@ Ajouter client
 
 @section('content')
 
-<section class="section profile">
+<section class="section profile"> 
     <div class="row">
       <div class="col-xl-3">
 

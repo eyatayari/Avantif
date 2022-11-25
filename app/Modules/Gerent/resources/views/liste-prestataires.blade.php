@@ -1,14 +1,11 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Liste des factures 
+Liste des prestataires
 @stop
 
-@section('prev-page')
-Factures
-@stop 
 @section('active-page')
-Liste des Factures
+Dashobard
 @stop
 
 @section('content')
@@ -20,55 +17,30 @@ Liste des Factures
     <thead>
         <tr >
             
-            <th>Num facture</th>
-            <th>Code client</th>
             <th>Code prestataire</th>
-            <th>Total TTC</th>
-            <th>Date </th>
-            <th>Etat paiment</th>
+            <th>Nom et prénom</th>
+            <th>Téléphone</th>
+            <th>Email</th>
+            
+            <th>Statut</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
         <tr>
              
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
+            <td>0005</td>
+            <td>samar</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-danger">non payé</span></td>
+            
+            <td><span class="badge rounded-pill bg-danger">hors service</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
             </td> 
 
-<<<<<<< HEAD
-            <td>{{$facture->numFacture}}</td>
-            <td>{{$facture->client->id}}</td>
-            <td>{{$facture->prestation->id}}</td>
-            <td>{{$facture->totalFacture}}</td>
-            <td>{{$facture->DateFacture}}</td>
-            <td>{{$facture->mode_paiement}}</td>
-
-            <td id="actionBox">
-
-                <a id="actionBtn" class=" btnDelete" href="{{route("delete-facture",['numFacture'=>$facture->numFacture])}}"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td>
-
-
-        </tr>
-        @endforeach
-
-
-
-
-        </tbody>
-
-    </table>
-=======
             
         </tr>
         <tr>
@@ -77,12 +49,12 @@ Liste des Factures
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
+            
+            <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
             </td> 
         </tr>
         <tr>
@@ -91,12 +63,12 @@ Liste des Factures
             <td>System Architect</td>
             <td>Edinburgh</td>
             <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
+            
+            <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
             </td> 
         </tr>
         <tr>
@@ -105,13 +77,11 @@ Liste des Factures
             <td>System Architect</td>
             <td>Edinburgh</td> 
             <td>61</td>
-            <td>2011/04/25</td>
-            <td><span class="badge rounded-pill bg-success">payé</span></td>
+            
+            <td><span class="badge rounded-pill bg-success">Actif</span></td>
              <td id="actionBox">         
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-filetype-pdf"></i></a>
-                
-               
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
             </td> 
         </tr>
        
@@ -124,6 +94,4 @@ Liste des Factures
     </tbody>
   
 </table>
->>>>>>> 1bbb954ac405255bce3efeb6186d8d5a32510b6e
-
 @stop

@@ -1,11 +1,7 @@
-<<<<<<< HEAD:app/Modules/Gerent/resources/views/ajout-prestataire.blade.php
-=======
-
->>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa:app/Modules/Prestataire/resources/views/ajout-prestataire.blade.php
 @extends('layouts.master')
-@include('layouts.sidebar-gerent')
+@include('layouts.sidebar-prestataire')
 @section('title-page')
-Ajouter prestataire
+Ajouter client 
 @stop
 
 @section('prev-page')
@@ -17,7 +13,7 @@ Ajouter client
 
 @section('content')
 
-<section class="section profile">
+<section class="section profile"> 
     <div class="row">
       <div class="col-xl-3">
 
@@ -41,21 +37,21 @@ Ajouter client
         <div class="card">
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
+          <div style="display: flex;place-content: space-between;">
+            <h4 class="pt-2">Informations client</h4>
+            <div class="form-check form-switch">
+              <label for="inputText" class="col-sm-2 col-form-label" style="
+              margin-top: 0;
+               ">Active</label>
+            
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            </div>
+          </div>
 
-            <h4>Informations Prestatire</h4>
-            <form action="{{route("store-prestataire")}}">
-              @Csrf
-              <div class="row mb-3">
-                
-                  <div class="form-check form-switch">
-                      <label for="inputText" class="col-sm-2 col-form-label">Active</label>
-                      
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-                      
-               
-                   
-                </div>
-              </div>
+
+            <form>
+             
+              
 
                 <div class="row mb-3">
                  
@@ -126,7 +122,25 @@ Ajouter client
                 
                   
                 </div>
-               
+                <h4 class="pt-5">Personne référente</h4>
+
+                <div class="row mb-3">
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Nom </label>
+                    <input type="text" class="form-control">
+                  </div>
+                 
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Email </label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="inputText" class="col-sm-2 col-form-label">Mobile </label>
+                    <input type="text" class="form-control"required>
+                  </div>
+                
+                  
+                </div>
 
 
 
@@ -139,7 +153,7 @@ Ajouter client
 
               </form><!-- End General Form Elements -->
               <div class="text-center pt-4">
-                <button type="submit" class=" btn-submit ">Ajouter Prestataire</button>
+                <button type="submit" class=" btn-submit ">Ajouter client</button>
               </div>
           </div>
         </div>
