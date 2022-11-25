@@ -45,6 +45,31 @@ Liste des Factures
             </td> 
 
 
+            <td>{{$facture->numFacture}}</td>
+            <td>{{$facture->client->id}}</td>
+            <td>{{$facture->prestation->id}}</td>
+            <td>{{$facture->totalFacture}}</td>
+            <td>{{$facture->DateFacture}}</td>
+            <td>{{$facture->mode_paiement}}</td>
+
+            <td id="actionBox">
+
+                <a id="actionBtn" class=" btnDelete" href="{{route("delete-facture",['numFacture'=>$facture->numFacture])}}"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
+            </td>
+
+
+        </tr>
+
+
+
+
+
+        </tbody>
+
+    </table>
+
+
             
         </tr>
         <tr>
@@ -95,10 +120,11 @@ Liste des Factures
        
         
      
-     
+
       
     </tbody>
   
 </table>
+
 
 @stop

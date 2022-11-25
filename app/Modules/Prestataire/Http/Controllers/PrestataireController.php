@@ -15,9 +15,14 @@ class PrestataireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  
+
 
     public function welcome()
+    {
+        return view("Prestataire::welcome");
+    }
+
+    public function GetListPrestataires()
     {
         $prestataires = Prestataire::all();
         return view("Prestataire::liste-prestataires")->with("prestataires", $prestataires);
@@ -43,7 +48,7 @@ class PrestataireController extends Controller
             $picture = date('His') . '-' . $filename;
             $file->move(public_path('img/prestataires'), $picture);
             $prestataire->image =  $picture;}
-            $prestataire->save();
+        $prestataire->save();
         return redirect()->route('');
 
 

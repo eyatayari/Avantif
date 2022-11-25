@@ -284,14 +284,14 @@
                   </div>
                   <div class="col-12"> 
                     <label for="inputEmail4" class="form-label">Catégories</label>
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected>Shampoings</option>
-                      <option value="1">Soins</option>
-                      <option value="2">Coiffants</option>
-                      <option value="2">Beauté</option>
-                      <option value="2">Hygiéne</option>
-                      <option value="2">Coloration/option>
-                     
+                    <select class="form-select" aria-label="Default select example" >
+                      <option selected value="Shampoings">Shampoings</option>
+                      <option value="Soins" >Soins</option>
+                      <option value="Coiffants">Coiffants</option>
+                      <option value="Beauté">Beauté</option>
+                      <option value="Hygiéne">Hygiéne</option>
+                      <option value="Coloration">Coloration</option>
+
                     </select>
                   </div>
                   <div class="col-12"> 

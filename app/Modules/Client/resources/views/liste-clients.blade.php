@@ -92,9 +92,8 @@ Liste des clients
        
   
        
-@endforeach
-        
-     
+
+     @endforeach
      
       
     </tbody>
