@@ -1,15 +1,14 @@
 @extends('layouts.master')
-@include('layouts.sidebar-gerent')
+@include('layouts.sidebar-prestataire')
 @section('title-page')
 Liste des clients
 @stop
 
-@section('prev-page')
-Factures
-@stop 
 @section('active-page')
-Liste des clients 
+Liste des clients
 @stop
+
+
 
 @section('content')
 <div class="btn-ajout">
@@ -20,7 +19,7 @@ Liste des clients
     <thead>
         <tr >
             
-            <th>code client</th>
+            <th>Code client</th>
             <th>Nom et prénom</th>
             <th>Téléphone </th> 
             <th>Email</th>
@@ -98,4 +97,4 @@ Liste des clients
   
 </table>
 
-@stop
+@stop 

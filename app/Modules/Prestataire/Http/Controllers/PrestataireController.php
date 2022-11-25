@@ -15,12 +15,9 @@ class PrestataireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function welcome()
-    {
-        return view("Prestataire::welcome");
-    }
+  
 
-    public function GetListPrestataires()
+    public function welcome()
     {
         $prestataires = Prestataire::all();
         return view("Prestataire::liste-prestataires")->with("prestataires", $prestataires);
