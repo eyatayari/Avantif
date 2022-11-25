@@ -75,7 +75,10 @@ Dashobard
              
             <td>Tiger Nixon</td>
             <td>System Architect</td>
+
+
             <td>Edinburgh</td> 
+            <td>ddd</td>
             <td>61</td>
             
             <td><span class="badge rounded-pill bg-success">Actif</span></td>
