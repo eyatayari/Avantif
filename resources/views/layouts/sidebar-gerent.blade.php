@@ -36,8 +36,6 @@
       </li><!-- End Forms Nav -->
       <li class="nav-item">
 
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-grid"></i>
         <a class="nav-link collapsed" href="{{route("all-factures")}}">
           <i class="bi bi-journal-text"></i>
           <span>Factures</span>
