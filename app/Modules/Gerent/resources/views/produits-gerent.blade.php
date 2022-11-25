@@ -2,10 +2,7 @@
 @include('layouts.sidebar-gerent')
 
 @section('content')
-<<<<<<< HEAD
 
-=======
->>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa
 
   @foreach ($produits as $categorie  => $produit_cat)
     {{$categorie}}
@@ -41,222 +38,221 @@
       </div>
     
       <section class="product_section layout_padding"> 
-      <div class="tab-content pt-2" id="myTabContent">
-       <!-- Pills shampoings --> 
-    <div class="container tab-pane fade show active profile-edit pt-3" id="pills-Shampoings">
-       <div class="row">
-        <div class="col-md-4 col-lg-4">
-
-          <div class="box">
-            <div class="option_container">
-               <div class="options">
-                  <a href="" class="option1" data-bs-toggle="modal" data-bs-target="#myModal"> 
-                  Voir plus
-                  </a>
-                  <a href="" class="option2">
-                  Ajouter au panier
-                  </a>
-               </div>
-            </div>
-            <div class="img-box">
-              <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-            </div>
-            <div class="detail-box">
-               <h5>
-                Créme hydratante
-               </h5>
-               <h6>
-                  $10
-               </h6>
-            </div>
-         </div>
-
+        <div class="tab-content pt-2" id="myTabContent">
+         <!-- Pills shampoings --> 
+      <div class="container tab-pane fade show active profile-edit pt-3" id="pills-Shampoings">
+         <div class="row">
+          <div class="col-md-4 col-lg-4">
+  
+            <div class="box">
+              <div class="option_container">
+                 <div class="options">
+                    <a href="" class="option1" data-bs-toggle="modal" data-bs-target="#myModal"> 
+                    Voir plus
+                    </a>
+                    <a href="" class="option2">
+                    Ajouter au panier
+                    </a>
+                 </div>
+              </div>
+              <div class="img-box">
+                <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+              </div>
+              <div class="detail-box">
+                 <h5>
+                  Créme hydratante
+                 </h5>
+                 <h6>
+                    $10
+                 </h6>
+              </div>
+           </div>
+  
+          </div>
+  
+  
+       
+  
+          </div>
         </div>
-
-
-     
-
-        </div>
-      </div>
-  <!-- Pills soins -->
-      <div class="container tab-pane fade profile-edit pt-3" id="pills-Soins">
-        <div class="row">
+    <!-- Pills soins -->
+        <div class="container tab-pane fade profile-edit pt-3" id="pills-Soins">
+          <div class="row">
+          
+  
+                <div class="col-md-4 col-lg-4">
+  
+                  <div class="box">
+                    <div class="option_container">
+                       <div class="options">
+                          <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
+                          Voir plus
+                          </a>
+                          <a href="" class="option2">
+                          Ajouter au panier
+                          </a>
+                       </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="detail-box">
+                       <h5>
+                        Créme hydratante
+                       </h5>
+                       <h6>
+                          $10
+                       </h6>
+                    </div>
+                 </div>
+  
+                </div>
+   
+               
+   
         
-
-              <div class="col-md-4 col-lg-4">
-
-                <div class="box">
-                  <div class="option_container">
-                     <div class="options">
-                        <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
-                        Voir plus
-                        </a>
-                        <a href="" class="option2">
-                        Ajouter au panier
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img-box">
-                    <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                      Créme hydratante
-                     </h5>
-                     <h6>
-                        $10
-                     </h6>
-                  </div>
-               </div>
-
-              </div>
- 
-             
- 
-      
- 
-      
+   
+        
+           </div>
          </div>
-       </div>
-
-  <!-- Pills coiffants -->
-       <div class="container tab-pane fade profile-edit pt-3" id="pills-Coiffants">
-        <div class="row">
-              <div class="col-md-4 col-lg-4">
-
-                <div class="box">
-                  <div class="option_container">
-                     <div class="options">
-                        <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
-                        Voir plus
-                        </a>
-                        <a href="" class="option2">
-                        Ajouter au panier
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img-box">
-                    <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                      Créme hydratante
-                     </h5>
-                     <h6>
-                        $10
-                     </h6>
-                  </div>
-               </div>
-
-              </div>
+  
+    <!-- Pills coiffants -->
+         <div class="container tab-pane fade profile-edit pt-3" id="pills-Coiffants">
+          <div class="row">
+                <div class="col-md-4 col-lg-4">
+  
+                  <div class="box">
+                    <div class="option_container">
+                       <div class="options">
+                          <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
+                          Voir plus
+                          </a>
+                          <a href="" class="option2">
+                          Ajouter au panier
+                          </a>
+                       </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="detail-box">
+                       <h5>
+                        Créme hydratante
+                       </h5>
+                       <h6>
+                          $10
+                       </h6>
+                    </div>
+                 </div>
+  
+                </div>
+           </div>
          </div>
-       </div>
-
-       <!-- Pills Beauté -->
-       <div class="container tab-pane fade profile-edit pt-3" id="pills-beauté">
-        <div class="row">
-              <div class="col-md-4 col-lg-4">
-
-                <div class="box">
-                  <div class="option_container">
-                     <div class="options">
-                        <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
-                        Voir plus
-                        </a>
-                        <a href="" class="option2">
-                        Ajouter au panier
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img-box">
-                    <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                      Créme hydratante
-                     </h5>
-                     <h6>
-                        $10
-                     </h6>
-                  </div>
-               </div>
-
-              </div>
+  
+         <!-- Pills Beauté -->
+         <div class="container tab-pane fade profile-edit pt-3" id="pills-beauté">
+          <div class="row">
+                <div class="col-md-4 col-lg-4">
+  
+                  <div class="box">
+                    <div class="option_container">
+                       <div class="options">
+                          <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
+                          Voir plus
+                          </a>
+                          <a href="" class="option2">
+                          Ajouter au panier
+                          </a>
+                       </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="detail-box">
+                       <h5>
+                        Créme hydratante
+                       </h5>
+                       <h6>
+                          $10
+                       </h6>
+                    </div>
+                 </div>
+  
+                </div>
+           </div>
          </div>
-       </div>
-
-       <!-- Pills hygiéne --> 
-       <div class="container tab-pane fade profile-edit pt-3" id="pills-hygiéne">
-        <div class="row">
-              <div class="col-md-4 col-lg-4">
-
-                <div class="box">
-                  <div class="option_container">
-                     <div class="options">
-                        <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
-                        Voir plus
-                        </a>
-                        <a href="" class="option2">
-                        Ajouter au panier
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img-box">
-                    <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                      Créme hydratante
-                     </h5>
-                     <h6>
-                        $10
-                     </h6>
-                  </div>
-               </div>
-
-              </div>
+  
+         <!-- Pills hygiéne --> 
+         <div class="container tab-pane fade profile-edit pt-3" id="pills-hygiéne">
+          <div class="row">
+                <div class="col-md-4 col-lg-4">
+  
+                  <div class="box">
+                    <div class="option_container">
+                       <div class="options">
+                          <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
+                          Voir plus
+                          </a>
+                          <a href="" class="option2">
+                          Ajouter au panier
+                          </a>
+                       </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="detail-box">
+                       <h5>
+                        Créme hydratante
+                       </h5>
+                       <h6>
+                          $10
+                       </h6>
+                    </div>
+                 </div>
+  
+                </div>
+           </div>
          </div>
-       </div>
-       <!-- Pills colorations -->
-       <div class="container tab-pane fade profile-edit pt-3" id="pills-coloration">
-        <div class="row">
-              <div class="col-md-4 col-lg-4">
-
-                <div class="box">
-                  <div class="option_container">
-                     <div class="options">
-                        <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
-                        Voir plus
-                        </a>
-                        <a href="" class="option2">
-                        Ajouter au panier
-                        </a>
-                     </div>
-                  </div>
-                  <div class="img-box">
-                    <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
-                  </div>
-                  <div class="detail-box">
-                     <h5>
-                      Créme hydratante
-                     </h5>
-                     <h6>
-                        $10
-                     </h6>
-                  </div>
-               </div>
-
-              </div>
+         <!-- Pills colorations -->
+         <div class="container tab-pane fade profile-edit pt-3" id="pills-coloration">
+          <div class="row">
+                <div class="col-md-4 col-lg-4">
+  
+                  <div class="box">
+                    <div class="option_container">
+                       <div class="options">
+                          <a href="" class="option1"  data-bs-toggle="modal" data-bs-target="#modaldetails">
+                          Voir plus
+                          </a>
+                          <a href="" class="option2">
+                          Ajouter au panier
+                          </a>
+                       </div>
+                    </div>
+                    <div class="img-box">
+                      <img src="assets/img/Glycerine3.png" class="card-img-top" alt="...">
+                    </div>
+                    <div class="detail-box">
+                       <h5>
+                        Créme hydratante
+                       </h5>
+                       <h6>
+                          $10
+                       </h6>
+                    </div>
+                 </div>
+  
+                </div>
+           </div>
          </div>
-       </div>
-      </section>
+        </section>
     </div>
 
        
     
 
         <!-- Modal ajout produit -->
-      
         <div class="modal fade" id="modalDialogScrollable" tabindex="-1">
           <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
@@ -322,7 +318,9 @@
               </div>
             </div>
           </div>
-        </div><!-- End ajout produit--> 
+        </div>
+      
+<!-- End ajout produit--> 
 
      
      <!-- Modal details produits -->
@@ -376,10 +374,8 @@
          
 
     </div>
-<<<<<<< HEAD
 
-=======
   </div>
   @endforeach
->>>>>>> 6bd69e1a9ebfca9f78be77e4e5b9e2845bbdebaa
+
 @stop
