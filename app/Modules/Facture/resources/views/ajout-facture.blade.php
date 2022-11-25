@@ -158,7 +158,7 @@ Ajouter facture
                 </div>
 
                 <div class="tab-pane fade pt-3" id="three">
-                  <div class="row mb-3">
+                  <div class="row mb-6">
                     <BODY>
 
                       <div class="buttonsGroup"> 
@@ -167,29 +167,28 @@ Ajouter facture
                       </div>
                     
                       <TABLE id="dataTable" >
-                        <tr><th>Prestation</th><th>Qté</th><th>Tarif HT</th> <th>TVA</th><th>Tarif TTC</th><th>Total</th> <th></th></tr>
-                        <TR>
-                          <TD>
-                              <input type="text" class="form-control addRInputs"  >
-                            </div>
+                        <tr><th>Prestation</th><th>Qté</th><th>Tarif HT</th> <th>TVA</th><</tr>
+                        <TR >
+
+                          <TD class="form-control addRInputs">
+                            <select  class="form-control">
+                              @foreach($prestations as $prestation)
+                            <option class="form-control addRInputs">{{$prestation->name}}
+                            </option>
+                                @endforeach
+                            </select>
+
                           </TD>
                           <TD>
-                              <input type="number" class="form-control addRInputs" min="1" >
-                            </div>
-                          <TD>
-                              <input type="number" class="form-control addRInputs"  >
-                            </div>
-                        <TD>
-                            <input type="number" class="form-control addRInputs"  >
-                        </TD>
-                          <TD>
-                              <input type="number" class="form-control addRInputs"  >
-                            </div> </TD>
+                              <input type="number" class="form-control addRInputs" min="1" name="qte" >
 
-                            <TD>
-                              <input type="number" class="form-control addRInputs"  >
-                            </div> </TD>
-                          </TR>
+                          <TD>
+                              <input type="number" class="form-control "  >{{$prestation->price}}
+
+                        <TD>
+                            <input type="number" class="form-control "  >
+                        </TD>
+                         </TR>
                       </TABLE>
                     
                     </BODY>

@@ -4,6 +4,8 @@ namespace App\Modules\Facture\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Facture\Models\Facture;
+use App\Modules\Gerent\Models\produit;
+use App\Modules\Prestataire\Models\prestation;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Type\Integer;
 
@@ -26,6 +28,10 @@ class FactureController extends Controller
         return redirect()->route("all-factures");
     }
     public function DisplayAddFacture(){
-        return view("Facture::ajout-facture");
+        $prestations=prestation::all();
+        //todo add only prestations of logged prestataire
+        $produits=produit::all();
+
+        return view("Facture::ajout-facture")->with("prestations",$prestations)->with("produits",$produits);
     }
 }
