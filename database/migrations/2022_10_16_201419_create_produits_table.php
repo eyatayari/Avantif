@@ -19,6 +19,8 @@ class CreateProduitsTable extends Migration
             $table->string("nom_marque");
             $table->string("photo_produit");
             $table->string("categorie");
+            $table->float("prix");
+            $table->text("description");
             $table->float("nbrStock");
             $table->timestamps();
         });
