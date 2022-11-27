@@ -15,13 +15,17 @@ class CreatePrestatairesTable extends Migration
     {
         Schema::create('prestataires', function (Blueprint $table) {
            $table->id();
+            $table->string('civilité');
                         $table->string('nom');
                         $table->string('prenom');
                         $table->string('login');
-                        $table->string('mdp');
+                        //$table->string('mdp');
                         $table->string('image');
                         $table->string('email')->unique();
                         $table->string('adresse');
+                        $table->string('pays');
+                        $table->string('telephone');
+                        $table->boolean("statut")->default(false);
                         $table->rememberToken();
                         $table->timestamps();
         });
