@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         ArtemSchander\L5Modular\ModuleServiceProvider::class,
 
+
         /*
          * Package Service Providers...
          */
@@ -175,6 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+
 
     ],
 
