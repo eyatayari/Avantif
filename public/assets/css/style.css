@@ -1664,25 +1664,7 @@ label span {
   max-width: 200px;
 }
 
-.ADD{
-  width: 40px;
-  height: 40px;
-  background: #e9f2ff;
-    border-radius: 0;
-    color: #819ac9;
-    padding: 8px;
-    border: #cbcbcb 1px solid;
-}
 
-.REMOVE{
-  width: 40px;
-  height: 40px;
-  background: #ffd4dd;
-  border-radius: 0;
-  color: #dd0330;
-  padding: 8px;
-  border: #cbcbcb 1px solid;
-}
 
 .buttonsGroup{
   text-align: -webkit-right;

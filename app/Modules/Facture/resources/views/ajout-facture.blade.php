@@ -1,6 +1,7 @@
-@extends('layouts.master') 
 
+@extends('layouts.master') 
 @include('layouts.sidebar-prestataire')
+
 @section('title-page')
 Ajouter facture
 @stop
@@ -30,12 +31,10 @@ Ajouter facture
                 </li>
 
                 <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#two">Personne référente </button>
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#two">Lignes de facture </button>
                 </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#three">Lignes de facture</button>
-                </li>
+                
 
               </ul>
               <div class="tab-content pt-2">
@@ -113,96 +112,70 @@ Ajouter facture
 
                 <div class="tab-pane fade profile-edit pt-3" id="two">
 
-                  <!-- Settings Form -->
-                  <form>
-
-                    
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nom</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input  type="text" class="form-control" id="fullName" value="">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Prenom</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input  type="text" class="form-control" id="fullName" value="">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Teléphone</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input  type="text" class="form-control" id="fullName" value="">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input  type="email" class="form-control" id="fullName" value="">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Adresse</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input  type="text" class="form-control" id="fullName" value="">
-                      </div>
-                    </div>
-                    <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Envoyer les photos</label>
-                      <div class="col-md-8 col-lg-9">
-                        <div class="form-check form-switch" style="padding-left: 55px;" >
-                          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                          <label class="form-check-label" style="margin: 0 margin-top: 10px;" for="flexSwitchCheckDefault">Active</label>
-                        </div>
-                      </div>
-                   
-                  </div>
-
-                  </form><!-- End settings Form -->
-
-                </div>
-
-                <div class="tab-pane fade pt-3" id="three">
-                  <div class="row mb-6">
-                    <BODY>
-
-                      <div class="buttonsGroup"> 
-                        <INPUT type="button" class="ADD btn-sm AddRemove" value="+" onclick="addRow('dataTable')" />
-                        <INPUT type="button" class="REMOVE btn-sm AddRemove" value="-" onclick="deleteRow('dataTable')" />
-                      </div>
-                    
-                      <TABLE id="dataTable" >
-                        <tr><th>Prestation</th><th>Qté</th><th>Tarif HT</th> <th>TVA</th><</tr>
-                        <TR >
-
-                          <TD class="form-control addRInputs">
-                            <select  class="form-control">
-                              @foreach($prestations as $prestation)
-                            <option class="form-control addRInputs">{{$prestation->name}}
-                            </option>
-                                @endforeach
-                            </select>
-
-                          </TD>
-                          <TD>
-                              <input type="number" class="form-control addRInputs" min="1" name="qte" >
-
-                          <TD>
-                              <input type="number" class="form-control "  >{{$prestation->price}}
-
-                        <TD>
-                            <input type="number" class="form-control "  >
-                        </TD>
-                         </TR>
-                      </TABLE>
-                    
-                    </BODY>
-                  </div>
+                  <article>
+                    <h1>Recipient</h1>
+                    <table class="meta">
+                      <tr>
+                        <th><span>Facture #</span></th>
+                        <td><span contenteditable></span></td>
+                      </tr>
+                      <tr>
+                        <th><span>Date</span></th>
+                        <td><span contenteditable></span></td>
+                      </tr>
+                      <tr>
+                        <th><span>Montant dû</span></th>
+                        <td><span id="prefix" contenteditable>€</span><span></span></td>
+                      </tr>
+                    </table>
+                    <table class="inventory">
+                      <thead>
+                        <tr>
+                          <th><span>Prestataion</span></th>
+                          <th><span>Description</span></th>
+                          <th><span>Montant</span></th>
+                          <th><span>Quantité</span></th>
+                          <th><span>Prix HT</span></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a class="cut">-</a><span contenteditable></span></td>
+                          <td><span contenteditable></span></td>
+                          <td><span data-prefix>€</span><span contenteditable></span></td>
+                          <td><span contenteditable>1</span></td>
+                          <td><span data-prefix>€</span><span></span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <a class="add">+</a>
+                    <table class="balance">
+                      <tr>
+                        <th><span>Montant total HT</span></th>
+                        <td><span data-prefix>€</span><span>0.00</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>Montant payé</span></th>
+                        <td><span data-prefix>€</span><span contenteditable>0.00</span></td>
+                      </tr>
+                      <tr>
+                        <th><span>Total HT</span></th>
+                        <td><span data-prefix>€</span><span>0.00</span></td>
+                      </tr>
+                    </table>
+                  </article>
 
                 </div>
+
+                
+                
+                
+                
+                
+                
+                
+                
+        
 
               </div><!-- End Bordered Tabs -->
               <div class="text-center">
@@ -215,3 +188,5 @@ Ajouter facture
       </div>
     </section>
 @stop  
+<link href="{{asset('assets/css/style-facture.css')}}" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="{{ URL::asset('assets/js/script-facture.js') }}"></script>
