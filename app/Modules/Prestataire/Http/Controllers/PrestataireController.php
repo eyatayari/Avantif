@@ -34,22 +34,36 @@ class PrestataireController extends Controller
 
 
     }
-    public function StorePrestataire(Request $request){
+
+    public function StorePrestataire(Request $request)
+    {
         $prestataire = new Prestataire();
-        $prestataire->nom =$request->nom;
-        $prestataire->prenom=$request->prenom;
-        $prestataire->email=$request->email;
-        $prestataire->adresse=$request->adresse;
-        $prestataire->mdp=bcrypt($request->mdp);
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
+
+        $prestataire->civilité = $request->civilité;
+        $prestataire->nom = $request->nom;
+        $prestataire->prenom = $request->prenom;
+        $prestataire->email = $request->email;
+        $prestataire->login=$request->login;
+        $prestataire->adresse = $request->adresse;
+        $prestataire->telephone=$request->telephone;
+        if($request->statut='on'){
+        $prestataire->statut = true;
+        }
+        $prestataire->pays = $request->pays;
+        if ($request->hasFile('image_pres')) {
+            $file = $request->file('image_pres');
             $filename = $file->getClientOriginalName();
-            $extension = $file->getClientOriginalExtension();
-            $picture = date('His') . '-' . $filename;
-            $file->move(public_path('img/prestataires'), $picture);
-            $prestataire->image =  $picture;}
+            //$extension = $file->getClientOriginalExtension();
+            $picture = '-' . $filename;
+
+            $destinationPath = public_path("assets/img/prestataires");
+            $file->move($destinationPath, $picture);
+            $prestataire->image = $picture;
+        }
+        //$prestataire->mdp=bcrypt($request->mdp);
+
         $prestataire->save();
-        return redirect()->route('');
+       return redirect()->route('list-prestataire');
 
 
     }

@@ -27,14 +27,20 @@ Dashobard
         </tr>
     </thead>
     <tbody>
+    @foreach($prestataires as $prestataire)
         <tr>
              
-            <td>0005</td>
-            <td>samar</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            
-            <td><span class="badge rounded-pill bg-danger">hors service</span></td>
+            <td>{{$prestataire->id}}</td>
+            <td>{{$prestataire->nom}} {{$prestataire->prenom}}</td>
+            <td>{{$prestataire->telephone}}</td>
+            <td>{{$prestataire->email}}</td>
+            <td>{{$prestataire->adresse}} , {{$prestataire->pays}}</td>
+
+            @if($prestataire->statut)
+            <td><span class="badge rounded-pill bg-danger">en service</span></td>
+            @else
+                <td><span class="badge rounded-pill bg-danger">Hors service</span></td>
+                @endif
              <td id="actionBox">
              
                 <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
@@ -43,50 +49,9 @@ Dashobard
 
             
         </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            
-            <td><span class="badge rounded-pill bg-success">Actif</span></td>
-             <td id="actionBox">
-             
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td> 
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
-            <td>Edinburgh</td>
-            <td>61</td>
-            
-            <td><span class="badge rounded-pill bg-success">Actif</span></td>
-             <td id="actionBox">
-             
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td> 
-        </tr>
-        <tr>
-             
-            <td>Tiger Nixon</td>
-            <td>System Architect</td>
+        @endforeach
 
 
-            <td>Edinburgh</td> 
-            <td>ddd</td>
-            <td>61</td>
-            
-            <td><span class="badge rounded-pill bg-success">Actif</span></td>
-             <td id="actionBox">         
-                <a id="actionBtn" class=" btnDelete" href="#"><i class="bi bi-trash3"></i></a>
-                <a id="actionBtn"  class="btnEdit" href="#"><i class="bi bi-pen"></i></a>
-            </td> 
-        </tr>
        
   
        

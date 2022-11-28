@@ -17,5 +17,7 @@ class GerentController extends Controller
     {
         return view("Gerent::liste-factures");         
     } 
-
+public function GetProfile(){
+        return view("Gerent::profile");
+}
 }
