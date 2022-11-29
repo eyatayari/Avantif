@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Modules\Prestataire\Models\Prestataire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PrestataireController extends Controller
 {
@@ -60,11 +61,25 @@ class PrestataireController extends Controller
             $file->move($destinationPath, $picture);
             $prestataire->image = $picture;
         }
-        //$prestataire->mdp=bcrypt($request->mdp);
+        $this->sendEmail($request);
+        $prestataire->mdp=bcrypt("123456");
 
         $prestataire->save();
        return redirect()->route('list-prestataire');
 
 
+    }
+    public function GetProfile(){
+        return view("Prestataire::profile");
+    }
+
+    public function sendEmail(Request $data){
+        Mail::send('email.plain_text', [ //view page
+            'message_txt' => $data->mdp //Data for the page
+        ], function ($message) use ($data){
+            $message->from('avantif@gmail.com', 'Gmail');
+            $message->subject("generation password");
+            $message->to($data->email);
+        });
     }
 }

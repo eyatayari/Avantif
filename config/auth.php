@@ -37,11 +37,11 @@ return [
 
     'guards' => [
         'Gerent' => [
-            'driver' => 'session',
+
             'provider' => 'admins',
         ],
         'Prestataire' => [
-            'driver' => 'session',
+
             'provider' => 'superadmins',
         ],
         'api' => [
