@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('login');
 });
 Route::post("/connect","Auth\LoginController@VerifierLogin")->name("login");
-
+Auth::routes();
 
 
 

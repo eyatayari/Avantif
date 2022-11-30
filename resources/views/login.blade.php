@@ -71,7 +71,7 @@
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control my-form" placeholder="Mot de passe" name="password"/>
+              <input type="password" id="form1Example23" class="form-control my-form" placeholder="Mot de passe" name="mdp"/>
               
             </div>
   

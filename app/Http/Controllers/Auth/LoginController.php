@@ -37,39 +37,28 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-       // $this->middleware('guest')->except('logout');
+    // $this->middleware('guest')->except('logout');
     }
     public function VerifierLogin(Request $request)
     {
 
-       dd($request->input());
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
 
-//        dd(
-//            Auth::guard('enseignant')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember')),
-//            Auth::guard('superadmin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember')),
-//            Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))
-//        );
+        if (Auth::guard('gerent')->attempt(['email' => $request->email, 'password' => $request->mdp])) {
 
-        if (Auth::guard('Gerent')->attempt(['email' => $request->email, 'password' => $request->password])) {
-
-
+            dd(Auth::guard('Gerent')->user());
 
             return redirect()->intended(route('profile-gerent'));
         }
-        if (Auth::guard('Prestataire')->attempt(['email' => $request->email, 'password' => $request->password])) {
-         //   dd( Auth::guard('superadmin')->user()->id);
+        if (Auth::guard('prestataire')->attempt(['email' => $request->email, 'password' => $request->mdp])) {
+            dd(Auth::guard('Prestataire')->user());
 
             return redirect()->intended(route('profile-prestataire'));
             //return redirect()->intended(route('superadminHome'));
         }
 
 
-        // return back()->withInput($request->only('email', 'remember'))->with('error');
-        return $this->sendFailedLoginResponse($request);
+         return back()->withInput($request->only('email'))->with('error');
+        //return $this->sendFailedLoginResponse($request);
     }
 
     /*public function showSuperAdmintLoginForm()

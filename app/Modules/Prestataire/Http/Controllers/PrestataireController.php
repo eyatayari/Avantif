@@ -6,7 +6,10 @@ use App\Http\Controllers\Controller;
 
 use App\Modules\Prestataire\Models\Prestataire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class PrestataireController extends Controller
 {
@@ -16,7 +19,13 @@ class PrestataireController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function __construct()
+    {
+        $this->middleware(function ($request, $next) {
+            $this->user = Auth::user();
+            return $next($request);
+        });
+    }
 
     public function welcome()
     {
@@ -44,7 +53,7 @@ class PrestataireController extends Controller
         $prestataire->nom = $request->nom;
         $prestataire->prenom = $request->prenom;
         $prestataire->email = $request->email;
-        $prestataire->login=$request->login;
+
         $prestataire->adresse = $request->adresse;
         $prestataire->telephone=$request->telephone;
         if($request->statut='on'){
@@ -61,8 +70,10 @@ class PrestataireController extends Controller
             $file->move($destinationPath, $picture);
             $prestataire->image = $picture;
         }
-        $this->sendEmail($request);
-        $prestataire->mdp=bcrypt("123456");
+        $password = Hash::make(Str::random(6));
+
+        //$this->sendEmail($request);
+        $prestataire->password="123456";
 
         $prestataire->save();
        return redirect()->route('list-prestataire');
@@ -74,7 +85,7 @@ class PrestataireController extends Controller
     }
 
     public function sendEmail(Request $data){
-        Mail::send('email.plain_text', [ //view page
+        Mail::send('login', [ //view page
             'message_txt' => $data->mdp //Data for the page
         ], function ($message) use ($data){
             $message->from('avantif@gmail.com', 'Gmail');

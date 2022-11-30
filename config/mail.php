@@ -71,7 +71,8 @@ return [
             'transport' => 'array',
         ],
     ],
-
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'port' => env('MAIL_PORT', 2525),
     /*
     |--------------------------------------------------------------------------
     | Global "From" Address

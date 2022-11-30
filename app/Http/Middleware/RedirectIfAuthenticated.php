@@ -16,11 +16,19 @@ class RedirectIfAuthenticated
      * @param  string|null  $guard
      * @return mixed
      */
+
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect(RouteServiceProvider::HOME);
+        if ($guard=="prestataire"&&Auth::guard($quard)->check()) {
+            return redirect('/prestataire');
         }
+        if ($guard=="gerent"&&Auth::guard($quard)->check()) {
+            return redirect('/gerent');
+        }
+        if (Auth::guard($quard)->check()) {
+            return redirect('/');
+        }
+
 
         return $next($request);
     }
