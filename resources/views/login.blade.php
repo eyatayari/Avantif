@@ -60,17 +60,18 @@
               
             </a>
      
-          <form>
+          <form method="post" action="{{route('login')}}">
             <!-- Email input -->
+           @csrf
             <div class="form-outline mb-4"> 
               
-              <input type="email" id="form1Example13" class="form-control my-form" placeholder="Nom utilisateur"/>
+              <input type="email" id="form1Example13" class="form-control my-form" placeholder="Nom utilisateur" name="email"/>
               
             </div>
   
             <!-- Password input -->
             <div class="form-outline mb-4">
-              <input type="password" id="form1Example23" class="form-control my-form" placeholder="Mot de passe"/>
+              <input type="password" id="form1Example23" class="form-control my-form" placeholder="Mot de passe" name="mdp"/>
               
             </div>
   

@@ -36,19 +36,27 @@ return [
     */
 
     'guards' => [
-        'Gerent' => [
+        'gerent' => [
             'driver' => 'session',
-            'provider' => 'admins',
+
+            'provider' => 'gerents',
         ],
-        'Prestataire' => [
+        'prestataire' => [
             'driver' => 'session',
-            'provider' => 'superadmins',
+            'provider' => 'prestataires',
         ],
+
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
-            'hash' => false,
+            'hash'=> false,
         ],
+
     ],
 
     /*
@@ -69,6 +77,16 @@ return [
     */
 
     'providers' => [
+        'gerents' => [
+            'driver' => 'eloquent',
+            'model'=> \App\Modules\Gerent\Models\Gerent::class,
+
+
+        ],
+        'prestataires' => [
+            'driver' => 'eloquent',
+            'model' => \App\Modules\Prestataire\Models\Prestataire::class,
+        ],
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
@@ -96,6 +114,18 @@ return [
     */
 
     'passwords' => [
+        'Gerent' => [
+            'provider' => 'gerents',
+            'table'=>'gerents',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'Prestataire' => [
+            'provider' => 'prestataires',
+            'table'=>'prestataires',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',

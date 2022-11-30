@@ -18,8 +18,8 @@ class CreatePrestatairesTable extends Migration
             $table->string('civilité');
                         $table->string('nom');
                         $table->string('prenom');
-                        $table->string('login');
-                        //$table->string('mdp');
+
+                        $table->string('password');
                         $table->string('image');
                         $table->string('email')->unique();
                         $table->string('adresse');

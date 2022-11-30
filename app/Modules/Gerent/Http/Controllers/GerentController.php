@@ -4,6 +4,7 @@ namespace App\Modules\Gerent\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GerentController extends Controller
 {
@@ -13,6 +14,7 @@ class GerentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function welcome()
     {
         return view("Gerent::liste-factures");         
