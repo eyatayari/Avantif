@@ -3,6 +3,7 @@
 namespace App\Modules\Facture\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Client\Models\Client;
 use App\Modules\Facture\Models\Facture;
 use App\Modules\Gerent\Models\produit;
 use App\Modules\Prestataire\Models\prestation;
@@ -28,10 +29,12 @@ class FactureController extends Controller
         return redirect()->route("all-factures");
     }
     public function DisplayAddFacture(){
-        $prestations=prestation::all();
         //todo add only prestations of logged prestataire
+
+        $prestations=prestation::all();
+        $clients=Client::all();
         $produits=produit::all();
 
-        return view("Facture::ajout-facture")->with("prestations",$prestations)->with("produits",$produits);
+        return view("Facture::ajout-facture")->with("prestations",$prestations)->with("produits",$produits)->with("clients",$clients);
     }
 }

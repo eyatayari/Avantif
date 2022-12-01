@@ -17,18 +17,12 @@ class RedirectIfAuthenticated
      * @return mixed
      */
 
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next, $guard=null )
     {
-        if ($guard=="prestataire"&&Auth::guard($quard)->check()) {
-            return redirect('/prestataire');
+        dd($guard);
+        if (!Auth::guard($guard)->check()) {
+            return redirect('/test');
         }
-        if ($guard=="gerent"&&Auth::guard($quard)->check()) {
-            return redirect('/gerent');
-        }
-        if (Auth::guard($quard)->check()) {
-            return redirect('/');
-        }
-
 
         return $next($request);
     }

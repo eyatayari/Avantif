@@ -16,7 +16,7 @@ class GerentPermission
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::guard('Gerent')->check()){
+        if(!Auth::guard('gerent')->check()){
 
             return redirect()->route('Login');
         }

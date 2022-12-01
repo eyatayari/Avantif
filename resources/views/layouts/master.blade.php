@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  
+
 
   @include('layouts.head')
 </head>
@@ -28,6 +28,7 @@
       </nav>
     </div><!-- End Page Title -->
     @yield('content')
+
   </main><!-- End #main -->
 
 

@@ -21,10 +21,9 @@ class PrestataireController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(function ($request, $next) {
-            $this->user = Auth::user();
-            return $next($request);
-        });
+
+        $this->middleware('auth:prestataire');
+
     }
 
     public function welcome()
@@ -73,7 +72,7 @@ class PrestataireController extends Controller
         $password = Hash::make(Str::random(6));
 
         //$this->sendEmail($request);
-        $prestataire->password="123456";
+        $prestataire->password=bcrypt("123456");
 
         $prestataire->save();
        return redirect()->route('list-prestataire');

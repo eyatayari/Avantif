@@ -11,6 +11,9 @@ Route::get('profile','GerentController@GetProfile')->name('profile-gerent');
 Route::get('dashboard-gerent',function (){
    return view('Gerent::dashboard-gerent');
 });
+Route::get('add-client',function (){
+    return view('Gerent::ajout-client');
+})->name('add-client');
 //});
 
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-//Route::group(['middleware' => 'auth:prestataire'], function() {
+Route::group(['middleware' => 'auth:prestataire','web','prestataire'], function() {
 //\Illuminate\Support\Facades\Auth::routes();
     Route::get('prestataire', 'PrestataireController@welcome')->name("prestataire");
     Route::get('add-prestataire', 'PrestataireController@GetAddPrestatairePage')->name("add-prestataire");
@@ -12,4 +12,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('dashboard-prestataire',function (){
     return view('Prestataire::dashboard-prestataire');
 });
-//});
+});

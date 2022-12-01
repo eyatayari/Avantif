@@ -15,6 +15,9 @@ class CreatePrestationsTable extends Migration
     {
         Schema::create('prestations', function (Blueprint $table) {
             $table->id();
+            $table->string("prestation_title");
+            $table->string("description");
+            $table->float("price");
             $table->timestamps();
         });
     }

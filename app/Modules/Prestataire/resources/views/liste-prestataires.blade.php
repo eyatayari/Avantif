@@ -9,7 +9,8 @@ Dashobard
 @stop
 
 @section('content')
-<div class="btn-ajout">
+
+    <div class="btn-ajout">
     <button type="submit" class="btn add-btn">+</button>
   </div>
 

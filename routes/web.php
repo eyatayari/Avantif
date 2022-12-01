@@ -15,9 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
-Route::post("/connect","Auth\LoginController@VerifierLogin")->name("login");
-Auth::routes();
+Route::post("/login","Auth\LoginController@VerifierLogin")->name("login");
 
-
+Route::post("/decnx","Auth\LoginController@logout")->name("logout");
 
 

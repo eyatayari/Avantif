@@ -83,10 +83,10 @@ Ajouter facture
                     <div class="row mb-3">
                       <label for="Country" class="col-md-4 col-lg-3 col-form-label">Client</label>
                       <div class="col-md-8 col-lg-9">
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Samar mediouni</option>
-                          <option value="1">Siwar mediouni</option>
-                          <option value="2">salwa bejaoui</option>
+                        <select class="form-select" aria-label="Default select example" name="client">
+                          @foreach($clients as $client)
+                          <option value="{{$client->id}}">{{$client->name}} </option>
+                          @endforeach
                         
                          
                         </select>
@@ -96,10 +96,10 @@ Ajouter facture
                     <div class="row mb-3">
                       <label for="Address" class="col-md-4 col-lg-3 col-form-label">Mode de paiement</label>
                       <div class="col-md-8 col-lg-9">
-                        <select class="form-select" aria-label="Default select example">
-                          <option selected>Espéces</option>
-                          <option value="1">Virement</option>
-                          <option value="2">Chéques</option>
+                        <select class="form-select" aria-label="Default select example" name="mode_paiement">
+                          <option selected value="Espéces">Espéces</option>
+                          <option value="Virement">Virement</option>
+                          <option value="Chéques">Chéques</option>
                         
                          
                         </select>
@@ -140,12 +140,22 @@ Ajouter facture
                       </thead>
                       <tbody>
                         <tr>
-                          <td><a class="cut">-</a><span contenteditable></span></td>
+                          <td>
+
+                            <select>
+                              @foreach($prestations as $prestation)
+                              <option>
+                                {{$prestation->prestation_title}}
+                              </option>
+
+                            </select>
+                           </td>
                           <td><span contenteditable></span></td>
-                          <td><span data-prefix>€</span><span contenteditable></span></td>
+                          <td><span data-prefix>DT</span><span contenteditable> {{$prestation->price }}</span></td>
                           <td><span contenteditable>1</span></td>
-                          <td><span data-prefix>€</span><span></span></td>
+                          <td><span data-prefix>DT</span><span></span></td>
                         </tr>
+                        @endforeach
                       </tbody>
                     </table>
                     <a class="add">+</a>

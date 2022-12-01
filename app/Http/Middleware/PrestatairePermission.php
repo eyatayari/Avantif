@@ -16,7 +16,7 @@ class PrestatairePermission
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::guard('Prestataire')->check()){
+        if(!Auth::guard('prestataire')->check()){
 
             return redirect()->route('Login');
         }
