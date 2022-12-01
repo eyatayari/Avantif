@@ -1081,18 +1081,18 @@ h6 {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #4154f1;
+  color: #ce152b;
   background: #f6f6fe;
 }
 
 .dashboard .revenue-card .card-icon {
-  color: #2eca6a;
-  background: #e0f8e9;
+  color: #ce152b;
+  background: #f6f6fe;
 }
 
 .dashboard .customers-card .card-icon {
-  color: #ff771d;
-  background: #ffecdf;
+  color: #ce152b;
+  background: #f6f6fe;
 }
 
 /* Activity */
