@@ -68,7 +68,7 @@
                  {{$shampoing->nom_produit}}
                  </h5>
                  <h6>
-                    {{$shampoing->prix}} DT
+                    {{$shampoing->prix}} €
                  </h6>
               </div>
            </div>
