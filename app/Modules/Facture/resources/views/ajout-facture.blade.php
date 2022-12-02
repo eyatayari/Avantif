@@ -43,7 +43,7 @@ Ajouter facture
                 <div class="tab-pane fade show active profile-edit pt-3" id="one">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form id="clients">
                     <div class="row mb-3">
                       <label for="about" class="col-md-4 col-lg-3 col-form-label">Facture N°</label>
                       <div class="col-md-8 col-lg-9">
@@ -199,4 +199,36 @@ Ajouter facture
     </section>
 @stop  
 <link href="{{asset('assets/css/style-facture.css')}}" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="{{ URL::asset('assets/js/script-facture.js') }}"></script>
+<script>
+    function manageRow(data) {
+
+        var rows = '';
+
+        $.each( data, function( key, value ) {
+
+            rows = rows + '<div class="ligne media align-items-center" data-id="'+value.id+'" >';
+
+            rows = rows + '<a class="flexbox align-items-center flex-grow gap-items" href="#qv-user-details" data-toggle="quickview">\n' +
+                 +
+                '\n' +
+                '            <div class="media-body text-truncate">\n' +
+                '                <h6>'+ value.fullName +'</h6>\n' +
+                '                <small>\n' +
+                '                    <span>'+ value.email+'</span>\n' +
+                '                    <span class="divider-dash">'+value.phone+'</span>\n' +
+                '                </small>\n' +
+                '            </div>\n' +
+                '        </a>';
+
+            rows = rows + ' <small><span class="" data-provide="tooltip"><a class="text-success">'+value.website +'</a> </span></small>\n ';
+            rows = rows + '   <a class="dropdown-item remove-item" href="#" data-id="'+value.id+'"><i class="text-danger fa fa-fw fa-trash"></i></a>'
+            ;
+
+            rows = rows + '</div>';
+        });
+
+        $("#clients").html(rows);
+
+
+    }
+</script>

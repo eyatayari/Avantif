@@ -24,6 +24,14 @@ class Relations extends Migration
             $table->foreign('client_id')->references('id')->on('clients');
 
         });
+        Schema::table('prestations', function (Blueprint $table) {
+            // relation enseignant etablissement
+
+            //relation typeEtablissement etablissement
+            $table->foreign('prestataire_id')->references('id')->on('prestataires');
+
+
+        });
     }
 
     /**

@@ -18,6 +18,7 @@ class CreatePrestationsTable extends Migration
             $table->string("prestation_title");
             $table->string("description");
             $table->float("price");
+            $table->unsignedBigInteger("prestataire_id");
             $table->timestamps();
         });
     }

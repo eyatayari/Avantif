@@ -20,8 +20,8 @@ class Facture extends Model
         'product_id',
         'client_id',
     ];
-    public function prestation(){
-       return $this->belongsTo(prestation::class,"prestation_id","id");
+    public function prestations(){
+       return $this->hasMany(prestation::class,"prestation_id","id");
     }
     public function client(){
         return$this->belongsTo(Client::class);
