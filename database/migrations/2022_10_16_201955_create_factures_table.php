@@ -16,7 +16,7 @@ class CreateFacturesTable extends Migration
         Schema::create('factures', function (Blueprint $table) {
 
 
-            $table->string("numFacture")->primary();
+            $table->string("numFacture")->primary()->autoIncrement();
             $table->date("DateFacture");
             $table->string('mode_paiement');
             $table->string('notes');
@@ -24,6 +24,7 @@ class CreateFacturesTable extends Migration
             $table->unsignedBigInteger("prestation_id");
             $table->unsignedBigInteger("product_id");
             $table->unsignedBigInteger("client_id");
+
             $table->timestamps();
         });
     }

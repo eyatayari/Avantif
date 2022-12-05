@@ -21,7 +21,7 @@ class Facture extends Model
         'client_id',
     ];
     public function prestations(){
-       return $this->hasMany(prestation::class,"prestation_id","id");
+       return $this->belongsToMany(prestation::class,"prestations","prestation_id" )->withPivot('nbr');
     }
     public function client(){
         return$this->belongsTo(Client::class);
