@@ -8,7 +8,9 @@ use App\Modules\Facture\Models\Facture;
 use App\Modules\Gerent\Models\produit;
 use App\Modules\Prestataire\Models\prestation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Ramsey\Uuid\Type\Integer;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class FactureController extends Controller
 {
@@ -69,7 +71,7 @@ class FactureController extends Controller
 
         $rows = $request->input('prestations');
         $quantities = $request->input('quantitePrest');
-        // dd($rows);
+
 
         for ($i = 0; $i < count($rows); $i++) {
             $prestations[] = [
@@ -85,8 +87,14 @@ class FactureController extends Controller
             $price = $pres->price;
             $facture->totalFacture += $prestation['nbr'] * $price;
 
+            $facture->prestations()->attach($facture->numFacture,
 
+                ['prestation_id'=>$prestation['id'],
+                    'facture_id'=>$facture->numFacture,
+                    'nbr'=>$prestation['nbr']]
+            );
         }
+        $facture->notes='nothing to mention';
 
         /* foreach ($rows as $row) {
              foreach ($quantities as $quantity){
@@ -99,10 +107,8 @@ class FactureController extends Controller
              ];
              }
          }*/
-        // dd($prestations);
 
-        $facture->prestations()->save($prestations);
-        dd($facture);
+       // dd($facture->with('prestations')->get());
         $facture->save();
     }
 
@@ -118,6 +124,24 @@ class FactureController extends Controller
         $produits = produit::all();
         //dd($prestations);
         return response()->json($produits);
+    }
+
+    public function GenererPdf($numfacture)
+    {
+        $facture = Facture::where('numFacture', $numfacture)->with(['client'])->first();
+        //$pdf = App::make('dompdf.wrapper');
+
+        // dd(Facture::with('produits')->get());
+        $pdf = PDF\Pdf::loadView('Facture::FacturePDF', [
+            'numFacture' => $facture->numFacture,
+            'total' => $facture->totalFacture,
+            'DateFacture' => $facture->DateFacture,
+            'client' => $facture->client->name,
+            'mode_paiement' => $facture->mode_paiement,
+            'prestations' => $facture->prestations,
+            'footer' => 'by Avantif'
+        ]);
+        return $pdf->stream('sample.pdf');
     }
 
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableFacturePrestation extends Migration
+class CreateFacturePrestationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableFacturePrestation extends Migration
      */
     public function up()
     {
-        Schema::create('facture_prestation', function (Blueprint $table) {
+        Schema::create('facture_prestations', function (Blueprint $table) {
             $table->id();
             $table->integer('facture_id')->unsigned();
             $table->integer('prestation_id')->unsigned();
