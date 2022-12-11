@@ -20,11 +20,11 @@
                         <div class="tab-pane fade show active profile-edit pt-3" id="one">
 
                             <!-- Profile Edit Form -->
-                            <form id="clients">
+
                                 <div class="row mb-3">
                                     <p class="col-md-4 col-lg-3 col-form-label">Facture N°:
 
-                                        <span> {{$numFacture}} </span>
+                                        <span> FS{{$id}} </span>
                                     </p>
                                 </div>
                                 <div class="row mb-3">
@@ -76,6 +76,7 @@
                                     <td> Prix Unitaire</td>
                                 </tr>
                                 @foreach($prestations as $prestation)
+
                                     <tr>
 
                                         <td>
@@ -84,7 +85,7 @@
                                         </td>
 
                                         <td>
-                                            {{$nbr}}
+                                            {{$prestation->pivot->nbr}}
                                         </td>
                                         <td>
                                             {{$prestation->price}}
@@ -108,19 +109,19 @@
                                     <td>Quantité</td>
                                     <td> Prix Unitaire</td>
                                 </tr>
-                                @foreach($prestations as $prestation)
+                                @foreach($produits as $produit)
                                 <tr>
 
                                     <td>
-                                        {{$prestation->prestation_title}}
+                                        {{$produit->nom_produit}} - {{$produit->nom_marque}}
 
                                     </td>
 
                                     <td>
-                                        {{$nbr}}
+                                        {{$produit->pivot->nbr}}
                                     </td>
                                     <td>
-                                        {{$prestation->price}}
+                                        {{$produit->prix}}
                                     </td>
                                 </tr>
 @endforeach

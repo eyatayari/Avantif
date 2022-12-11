@@ -14,8 +14,8 @@ class CreateFacturesTable extends Migration
     public function up()
     {
         Schema::create('factures', function (Blueprint $table) {
+            $table->id();
 
-            $table->id('numFacture');
 
             $table->date("DateFacture");
             $table->string('mode_paiement');

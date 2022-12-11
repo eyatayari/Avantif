@@ -137,7 +137,7 @@
                                                 <th>Quantité</th>
                                                 <th>Prix HT</th>
                                                 <th>
-                                                    <button type="button" id="addBtn">+<i
+                                                    <button type="button" id="addBtn" >+<i
                                                                 class="fas fa-plus"></i></button>
                                                 </th>
                                             </tr>
@@ -218,25 +218,28 @@
         "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
 </script>
 <script>
+
+
+    var tmp = null;
     $.ajax({
-        type: 'get',
-        url: '/getPrestations',
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        data: {},
-        success: function (res) {
+        'async': true,
+        'type': "get",
+        'dataType': 'Json',
+        'url': "/getPrestations",
+        'data': {},
+        'success': function (res) {
+            tmp = res;
             console.log(res);
             var resultData = res.data;
-            console.log(res);
+            //console.log(resultData);
             var html = '';
-
-            //console.log(row.prestation_title);
-            html += '<tr>' + '<td>' +
+               html += '<tr>' + '<td>' +
 
                 '<div class="form-group col-md-4"> ' +
                 '<select id="source" name="prestations[]" class="form-control" required>';
-            $.each(res, function (index, row) {
-                console.log(row.id);
+            $.each(tmp, function (index, row) {
+
+                //  console.log(row.id);
                 html += '<option value="' + row.id + '">' + row.prestation_title + '</option>';
             });
             html += '</select>' +
@@ -256,9 +259,17 @@
                 $("#prestations").append(html);
                 //x++;
             });
-
         }
     });
+
+
+
+
+
+
+    //console.log(tmp.prestation_title);
+
+
 </script>
 <script>
     $.ajax({
@@ -268,9 +279,9 @@
         dataType: "json",
         data: {},
         success: function (res) {
-            console.log(res);
+         //   console.log(res);
             var resultData = res.data;
-            console.log(res);
+           // console.log(res);
             var html = '';
 
             //console.log(row.prestation_title);
@@ -279,7 +290,7 @@
                 '<div class="form-group col-md-4"> ' +
                 '<select id="source" name="produits[]" class="form-control" required>';
             $.each(res, function (index, row) {
-                console.log(row.id);
+                //console.log(row.id);
                 html += '<option value="' + row.id + '">' + row.nom_produit + '</option>';
             });
             html += '</select>' +

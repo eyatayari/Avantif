@@ -5,8 +5,8 @@ namespace App\Modules\Facture\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Modules\Client\Models\Client;
 use App\Modules\Facture\Models\Facture;
-use App\Modules\Gerent\Models\produit;
-use App\Modules\Prestataire\Models\prestation;
+use App\Modules\Gerent\Models\Produit;
+use App\Modules\Prestataire\Models\Prestation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Ramsey\Uuid\Type\Integer;
@@ -22,14 +22,14 @@ class FactureController extends Controller
      */
     public function GetAllFactures()
     {
-        $factures = Facture::with("client", "prestation")->paginate(8);
+        $factures = Facture::with("client", "prestations")->paginate(8);
         //var_dump($factures);
         return view("Facture::liste-factures")->with("factures", $factures);
     }
 
     public function DeleteFacture($numFacture)
     {
-        Facture::query("select * from Facture where numfacture == ", $numFacture)->delete();
+        Facture::find($numFacture)->delete();
 
         return redirect()->route("all-factures");
     }
@@ -39,9 +39,9 @@ class FactureController extends Controller
         //todo add only prestations of logged prestataire
         //$facture= Facture::query("select numFacture from factures")->last() + 1;
 
-        $prestations = prestation::all();
+        $prestations = Prestation::all();
         $clients = Client::all();
-        $produits = produit::all();
+        $produits = Produit::all();
 
         return view("Facture::ajout-facture")->with("prestations", $prestations)->with("produits", $produits)->with("clients", $clients);
     }
@@ -49,9 +49,9 @@ class FactureController extends Controller
     public function DisplayAddFactureTest()
     {
 
-        $prestations = prestation::all();
+        $prestations = Prestation::all();
         $clients = Client::all();
-        $produits = produit::all();
+        $produits = Produit::all();
 
         return view("Facture::test")->with("prestations", $prestations)->with("produits", $produits)->with("clients", $clients);
 
@@ -62,39 +62,32 @@ class FactureController extends Controller
     {
         // dd($request);
         $facture = new Facture();
-
-
         $facture->DateFacture = $request->input('DateFacture');
         $facture->client_id = $request->input('client');
-
         $facture->mode_paiement = $request->mode_paiement;
-
-        $rows = $request->input('prestations');
+        $rows_prestations = $request->input('prestations');
+        $rows_produits = $request->input('produits');
+        $quantitiesprod=$request->input('quantiteProd');
         $quantities = $request->input('quantitePrest');
-
-
-        for ($i = 0; $i < count($rows); $i++) {
+        for ($i = 0; $i < count($rows_prestations); $i++) {
             $prestations[] = [
 
-                'id' => $rows[$i],
+                'id' => $rows_prestations[$i],
                 'nbr' => $quantities[$i]
 
             ];
         }
+        for ($i = 0; $i < count($rows_produits); $i++) {
+            $produits[] = [
 
-        foreach ($prestations as $prestation) {
-            $pres = prestation::find($prestation['id']);
-            $price = $pres->price;
-            $facture->totalFacture += $prestation['nbr'] * $price;
+                'id' => $rows_produits[$i],
+                'nbr' => $quantitiesprod[$i]
 
-            $facture->prestations()->attach($facture->numFacture,
-
-                ['prestation_id'=>$prestation['id'],
-                    'facture_id'=>$facture->numFacture,
-                    'nbr'=>$prestation['nbr']]
-            );
+            ];
         }
-        $facture->notes='nothing to mention';
+
+
+        $facture->notes = 'nothing to mention';
 
         /* foreach ($rows as $row) {
              foreach ($quantities as $quantity){
@@ -107,39 +100,65 @@ class FactureController extends Controller
              ];
              }
          }*/
+        foreach ($prestations as $prestation) {
+            $pres = Prestation::find($prestation['id']);
 
-       // dd($facture->with('prestations')->get());
+            $facture->totalFacture += $prestation['nbr'] * $pres->price;
+        };
+        foreach ($produits as $produit) {
+            $prod = Produit::find($produit['id']);
+
+            $facture->totalFacture += $produit['nbr'] * $prod->prix;
+        };
+        // dd($facture->with('prestations')->get());
         $facture->save();
+        foreach ($prestations as $prestation) {
+
+
+            $facture->prestations()->attach($prestation['id'],
+
+                ['nbr' => $prestation['nbr']]
+            );
+        }
+        foreach ($produits as $produit) {
+
+
+            $facture->produits()->attach($produit['id'],
+
+                ['nbr' => $produit['nbr']]
+            );
+        }
     }
 
     public function getPrestations()
     {
-        $prestations = prestation::all();
+        $prestations = Prestation::all();
         //dd($prestations);
         return response()->json($prestations);
     }
 
     public function getProduits()
     {
-        $produits = produit::all();
+        $produits = Produit::all();
         //dd($prestations);
         return response()->json($produits);
     }
 
     public function GenererPdf($numfacture)
     {
-        $facture = Facture::where('numFacture', $numfacture)->with(['client'])->first();
+        $facture = Facture::find($numfacture)->with(['client', 'prestations','produits'])->first();
         //$pdf = App::make('dompdf.wrapper');
 
-        // dd(Facture::with('produits')->get());
+        // dd($facture);
         $pdf = PDF\Pdf::loadView('Facture::FacturePDF', [
-            'numFacture' => $facture->numFacture,
+            'id' => $facture->id,
             'total' => $facture->totalFacture,
             'DateFacture' => $facture->DateFacture,
             'client' => $facture->client->name,
             'mode_paiement' => $facture->mode_paiement,
             'prestations' => $facture->prestations,
-            'footer' => 'by Avantif'
+            'produits'=>$facture->produits,
+
         ]);
         return $pdf->stream('sample.pdf');
     }
