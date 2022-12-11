@@ -17,13 +17,13 @@ class ProduitController extends Controller
     }
     public function GetAllProduct(){
 
-        $soins= produit::where('categorie','=','Soins')->get();
+        $soins= Produit::where('categorie','=','Soins')->get();
 
-        $coiffants= produit::where('categorie','=','Coiffants')->get();
-        $Colorations= produit::where('categorie','=','Colaration')->get();
-        $Shampoings= produit::where('categorie','=','Shampoings')->get();
-        $beautes= produit::where('categorie','=','Beaute')->get();
-        $Hygienes= produit::where('categorie','=','Hygiene')->get();
+        $coiffants= Produit::where('categorie','=','Coiffants')->get();
+        $Colorations= Produit::where('categorie','=','Colaration')->get();
+        $Shampoings= Produit::where('categorie','=','Shampoings')->get();
+        $beautes= Produit::where('categorie','=','Beaute')->get();
+        $Hygienes= Produit::where('categorie','=','Hygiene')->get();
         //var_dump($produits);
         
         return view("Gerent::produits-gerent")->with("Coiffants",
