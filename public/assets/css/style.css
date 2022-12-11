@@ -569,10 +569,11 @@ h6 {
 
 /* Breadcrumbs */
 .breadcrumb {
-  font-size: 14px;
+  font-size: 12px;
   font-family: "Nunito", sans-serif;
   color: #899bbd;
   font-weight: 600;
+  margin-left: 14px;
 }
 
 .breadcrumb a {
@@ -1081,18 +1082,18 @@ h6 {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #ce152b;
+  color: #4154f1;
   background: #f6f6fe;
 }
 
 .dashboard .revenue-card .card-icon {
-  color: #ce152b;
-  background: #f6f6fe;
+  color: #2eca6a;
+  background: #e0f8e9;
 }
 
 .dashboard .customers-card .card-icon {
-  color: #ce152b;
-  background: #f6f6fe;
+  color: #ff771d;
+  background: #ffecdf;
 }
 
 /* Activity */
@@ -1714,4 +1715,71 @@ label span {
   border-color: rgb(0 0 0 / 0%);
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 0%);
+}
+
+.table-bordered>:not(caption)>*>* {
+  border-width: 0 1px;
+  width: auto;
+}
+
+/*--------------------------------------------------------------
+#new clients
+--------------------------------------------------------------*/
+
+.undrawImg {
+  width: 300px;
+}
+.undrawImg2 {
+  width: 150px;
+  margin: 90px 0;
+}
+.btn-send {
+  background-color: #ce152b;
+  color: white;
+  border-radius: 0;
+  margin-top: 20px;
+  float: right;
+}
+.cartIcons {
+  width: 14px;
+  margin-right: 8px;
+  height: fit-content;
+}
+.pro-bloc2 {
+  width: unset;
+  margin-left: 15px;
+  border: 2px solid #86e98f;
+  padding: 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.pro-bloc3 {
+  width: unset;
+  margin-left: 15px;
+
+  padding: 15px;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.pro-bloc4 {
+  width: auto;
+  margin-left: 15px;
+  border: 2px solid #86e98f;
+  padding: 5px;
+  text-align: center;
+  margin-top: 15px;
+}
+.pro-bloc {
+  width: inherit;
+  margin-left: 15px;
+}
+
+
+
+#active2 {
+  display: block;
+  text-align: -webkit-right;
+  color: #86e98f;
 }
