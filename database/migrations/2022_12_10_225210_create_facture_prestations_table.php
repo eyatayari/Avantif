@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePrestationsTable extends Migration
+class CreateFacturePrestationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreatePrestationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('prestations', function (Blueprint $table) {
+        Schema::create('facture_prestations', function (Blueprint $table) {
             $table->id();
-            $table->string("prestation_title");
-            $table->string("description");
-            $table->float("price");
-            $table->unsignedBigInteger("prestataire_id");
-            $table->foreign('prestataire_id')->references('id')->on('prestataires');
+            $table->integer('facture_id')->unsigned();
+            $table->integer('prestation_id')->unsigned();
+            $table->float("nbr");
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreatePrestationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prestations');
+        Schema::dropIfExists('facture_prestation');
     }
 }

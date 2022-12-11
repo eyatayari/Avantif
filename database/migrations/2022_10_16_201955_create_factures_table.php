@@ -15,15 +15,16 @@ class CreateFacturesTable extends Migration
     {
         Schema::create('factures', function (Blueprint $table) {
 
+            $table->id('numFacture');
 
-            $table->string("numFacture")->primary();
             $table->date("DateFacture");
             $table->string('mode_paiement');
             $table->string('notes');
             $table->float("totalFacture");
-            $table->unsignedBigInteger("prestation_id");
-            $table->unsignedBigInteger("product_id");
+
             $table->unsignedBigInteger("client_id");
+            $table->foreign('client_id')->references('id')->on('clients');
+
             $table->timestamps();
         });
     }
