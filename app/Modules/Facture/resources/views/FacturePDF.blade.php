@@ -27,21 +27,7 @@
                                         <span> FS{{$id}} </span>
                                     </p>
                                 </div>
-                                <div class="row mb-3">
-                                    <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Photos
-                                    </label>
-                                    <div class="col-md-4 col-lg-4">
-                                        <img id="photos" src="" alt="Profile">
-                                        <div class="pt-2">
 
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-lg-4">
-                                        <img src="assets/img/profile-img.jpg" id="photos" alt="Profile">
-                                        <div class="pt-2">
-                                        </div>
-                                    </div>
-                                </div>
 
                                 <div class="row mb-3">
                                     <p for="fullName" class="col-md-4 col-lg-3 col-form-label">Date :
