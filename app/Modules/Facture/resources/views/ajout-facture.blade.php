@@ -30,10 +30,6 @@
                                 </button>
                             </li>
 
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#two">Lignes de facture
-                                </button>
-                            </li>
 
 
                         </ul>
@@ -44,17 +40,12 @@
                             <form id="clients" method="post" action="{{route('facture.store')}}">
                                 @csrf
                                 <div class="tab-pane fade show active profile-edit pt-3" id="one">
-                                    <div class="row mb-3">
-                                        <label for="about" class="col-md-4 col-lg-3 col-form-label">Facture N°</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <span> 000333 </span>
-                                        </div>
-                                    </div>
+
                                     <div class="row mb-3">
                                         <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Photos <span> Types de fichiers autorisés : png, jpg, jpeg </span>
                                         </label>
                                         <div class="col-md-4 col-lg-4">
-                                            <img id="photos" src="" alt="Profile">
+                                            <img id="photos" src="assets/img/profile-img.jpg" alt="Profile">
                                             <div class="pt-2">
                                                 <a href="#" class=" btnUpload btn-sm" title="Upload new profile image">Photo
                                                     avant <i class="bi bi-upload"></i></a>
@@ -101,11 +92,45 @@
                                                 <option selected value="Espéces">Espéces</option>
                                                 <option value="Virement">Virement</option>
                                                 <option value="Chéques">Chéques</option>
-
-
                                             </select>
                                         </div>
                                     </div>
+                                    <table class="table table-bordered" id="prestations">
+                                        <thead>
+                                        <tr>
+                                            <th>Prestation</th>
+                                            <th>Quantité</th>
+                                            <th>Prix HT</th>
+                                            <th>
+                                                <button type="button" id="addBtn" >+<i
+                                                            class="fas fa-plus"></i></button>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        </tbody>
+                                    </table>
+                                    <table class="table table-bordered" id="produits">
+                                        <thead>
+                                        <tr>
+                                            <th>Produits</th>
+                                            <th>Quantité</th>
+
+                                            <th>
+                                                <button type="button" id="addBtnProduit">+<i
+                                                            class="fas fa-plus"></i></button>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                        </tbody>
+                                    </table>
+
+
                                     <div class="text-center">
                                         <button type="submit" class=" btn-submit">Valider</button>
                                     </div>
@@ -113,57 +138,10 @@
 
                                 <div class="tab-pane fade profile-edit pt-3" id="two">
 
-                                    <article>
-                                        <h1>Recipient</h1>
-                                        <table class="meta">
-                                            <tr>
-                                                <th><span>Facture #</span></th>
-                                                <td><span contenteditable></span></td>
-                                            </tr>
-                                            <tr>
-                                                <th><span>Date</span></th>
-                                                <td><span contenteditable></span></td>
-                                            </tr>
-                                            <tr>
-                                                <th><span>Montant dû</span></th>
-                                                <td><span id="prefix" contenteditable>€</span><span></span></td>
-                                            </tr>
-                                        </table>
-
-                                        <table class="table table-bordered" id="prestations">
-                                            <thead>
-                                            <tr>
-                                                <th>Prestataion</th>
-                                                <th>Quantité</th>
-                                                <th>Prix HT</th>
-                                                <th>
-                                                    <button type="button" id="addBtn" >+<i
-                                                                class="fas fa-plus"></i></button>
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
 
 
-                                            </tbody>
-                                        </table>
-                                        <table class="table table-bordered" id="produits">
-                                            <thead>
-                                            <tr>
-                                                <th>Produits</th>
-                                                <th>Quantité</th>
-
-                                                <th>
-                                                    <button type="button" id="addBtnProduit">+<i
-                                                                class="fas fa-plus"></i></button>
-                                                </th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
 
 
-                                            </tbody>
-                                        </table>
 
                                         <!--   <table class="balance">
                                                <tr>
@@ -179,7 +157,7 @@
                                                    <td><span data-prefix>€</span><span>0.00</span></td>
                                                </tr>
                                            </table>-->
-                                    </article>
+
 
                                 </div>
 
@@ -220,37 +198,41 @@
 <script>
 
 
-    var tmp = null;
+
     $.ajax({
-        'async': true,
-        'type': "get",
-        'dataType': 'Json',
-        'url': "/getPrestations",
-        'data': {},
-        'success': function (res) {
-            tmp = res;
-            console.log(res);
+        dataType: "json",
+        type: 'get',
+        url: '/getPrestations',
+        contentType: "application/json; charset=utf-8",
+
+        data: {},
+        success: function (res) {
+               console.log(res);
             var resultData = res.data;
-            //console.log(resultData);
+            // console.log(res);
             var html = '';
+
+            //console.log(row.prestation_title);
+
                html += '<tr>' + '<td>' +
 
                 '<div class="form-group col-md-4"> ' +
                 '<select id="source" name="prestations[]" class="form-control" required>';
-            $.each(tmp, function (index, row) {
+            $.each(res, function (index, row) {
 
-                //  console.log(row.id);
+                 console.log(row.price);
                 html += '<option value="' + row.id + '">' + row.prestation_title + '</option>';
-            });
+
             html += '</select>' +
                 '</div> ' + '</td><td>' +
                 '<div class="form-group col-md-4"> ' +
                 '<input type="number"  name="quantitePrest[]" id="remove" >' +
-                '</div> ' + '</td><td>' +
+                '</div> ' + '</td><td>' ;
+                    html+= row.price + '</td><td>'+
                 ' <div class="form-group col-md-4"> ' +
                 '<input type="button" class="btn btn-danger" name="remove" id="remove" value="-"> ' +
                 '</div> </td></tr> ';
-
+            });
 
             $("#addBtn").click(function () {
                 /* var prestations = $(this).attr('data-content');
