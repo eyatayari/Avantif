@@ -55,13 +55,18 @@ class LoginController extends Controller
 
 //            dd(Auth::guard('gerent')->user());
 
-            return redirect()->intended(route('profile-gerent'));
+            return redirect()->intended(route('dashboard-gerent'));
         }elseif
         (Auth::guard('prestataire')->attempt(['email' => $request->email, 'password' => $request->mdp])) {
          //   dd(Auth::guard('prestataire')->user());
 
             return redirect()->intended(route('profile-prestataire'));
             //return redirect()->intended(route('superadminHome'));
+        }elseif (Auth::guard('client')->attempt(['email' => $request->email, 'password' => $request->mdp])) {
+            //   dd(Auth::guard('prestataire')->user());
+
+            return redirect()->intended(route('rendez-vous'));
+
         }
 
 

@@ -17,6 +17,6 @@ Route::get('/', function () {
 });
 Route::post("/login","Auth\LoginController@VerifierLogin")->name("login");
 
-Route::post("/decnx","Auth\LoginController@logout")->name("logout");
+Route::get("/decnx","Auth\LoginController@logout")->name("logout");
 
 

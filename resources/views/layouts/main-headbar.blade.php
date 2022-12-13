@@ -101,7 +101,7 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" >
-            <span class="d-none d-md-block dropdown-toggle ps-2">Samar mediouni</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{"a"}}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">

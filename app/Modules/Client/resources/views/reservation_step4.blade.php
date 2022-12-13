@@ -94,7 +94,7 @@ Rendez-vous
             </div>
                     
                     
-                    <button type="submit" class="btn btn-send mb-4">Passer</button>
+            <button type="submit" class="btn btn-send mb-4"><a href="{{route('reservation5')}}" >Passer</a></button>
             
             </div>
         
