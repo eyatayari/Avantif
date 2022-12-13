@@ -14,30 +14,11 @@ Ajouter client
 @section('content')
 
 <section class="section profile">
-  <form action="{{route("store-prestataire")}}" method="post" id="form" enctype="multipart/form-data">
+  <form action="{{route("update-prestataire",['id'=>$prestataire->id])}}" method="post" id="form" enctype="multipart/form-data">
     @Csrf
+    @method('Patch')
     <div class="row">
-      <div class="col-xl-3">
 
-        <div class="card">
-          <div class="card-body profile-card pt-3 d-flex flex-column align-items-center">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="">
-            <!--<div class="btn-groupy" >
-               <a href="#" class="ADD btn-sm AddRemove" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-               <a href="#" class="REMOVE btn-sm AddRemove" title="Remove my profile image"><i class="bi bi-trash"></i></a>
-             </div>
-
-            -->
-            <span class="file-wrapper ">
-            <input type="file" name="image_pres" id="imgInp" class="uploader " accept="image/jpg, image/jpeg, image/png" required/>
-            </span>
-            
-            
-          </div>
-        </div>
-
-      </div>
-    
 
       <div class="col-xl-9">
 
@@ -52,7 +33,7 @@ Ajouter client
                   <div class="form-check form-switch">
                       <label for="inputText" class="col-sm-2 col-form-label">Active</label>
                       
-                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="statut" checked>
+                      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" name="statut" @if($prestataire->statut=="1") checked @endif>
                       
                
                    
@@ -72,11 +53,11 @@ Ajouter client
                   </div>
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label" >Nom </label>
-                    <input type="text" class="form-control" name="nom" required>
+                    <input type="text" class="form-control" name="nom" required  value="{{$prestataire->nom}}">
                   </div>
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label" >Prénom </label>
-                    <input type="text" class="form-control" required name="prenom">
+                    <input type="text" class="form-control" required name="prenom" value="{{$prestataire->prenom}}">
                   </div>
                 
                   
@@ -86,12 +67,13 @@ Ajouter client
                  
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label">Email</label>
-                    <input type="text" class="form-control" required name="email">
+                    <input type="text" class="form-control" required name="email" value="{{$prestataire->email}}">
                   </div>
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label">Téléphone </label>
-                    <input type="text" class="form-control" name="telephone">
+                    <input type="text" class="form-control" name="telephone" value="{{$prestataire->telephone}}">
                   </div>
+
 
 
                   
@@ -101,14 +83,15 @@ Ajouter client
                 <div class="row mb-3">
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label">Adresse </label>
-                    <input type="text" class="form-control" name="adresse">
+                    <input type="text" class="form-control" name="adresse" value="{{$prestataire->adresse}}">
                   </div>
                   <div class="col-sm-4">
                     <label for="inputText" class="col-sm-2 col-form-label">Pays</label>
                     <select class="form-select" aria-label="Default select example" name="pays">
-                      <option value="France" selected>France</option>
-                      <option value="Allemagne">Allemagne</option>
-                      <option value="Espagne">Espagne</option>
+
+                        <option value="France" @if($prestataire->pays=="France") selected @endif >France</option>
+                      <option value="Allemagne" @if($prestataire->pays=="Allemagne") selected @endif >Allemagne</option>
+                      <option value="Espagne" @if($prestataire->pays=="Espagne") selected @endif >Espagne</option>
                      
                     </select>
                   </div>
@@ -127,7 +110,7 @@ Ajouter client
 
 
               <div class="text-center pt-4">
-                <button type="submit" class=" btn-submit ">Ajouter Prestataire</button>
+                <button type="submit" class=" btn-submit ">Modifier Prestataire</button>
               </div>
           </div>
         </div>
@@ -147,25 +130,4 @@ Ajouter client
     ------------------------------------------*/
 
 
-
-    $('.file-wrapper input[type=file]').bind('change focus click', SITE.fileInputs);
-
-    function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            var tmppath = URL.createObjectURL(event.target.files[0]);
-
-            reader.onload = function (e) {
-                $('#img-uploaded').attr('src', e.target.result);
-                $('input.img-path').val(tmppath);
-            }
-
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    $(".uploader").change(function(){
-        readURL(this);
-    });
-</script>
 @stop

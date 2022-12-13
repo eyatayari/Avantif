@@ -39,13 +39,15 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{route('logout')}}">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Déconnexion </span>
-        </a>
+        <form action="{{route("logout")}}" method="get">
+          @csrf
+          <button type="submit" class="btn ">
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>Déconnexion </span>
+          </button>
+
+        </form>
       </li><!-- End Login Page Nav -->
-
-
     </ul>
 
   </aside><!-- End Sidebar-->
