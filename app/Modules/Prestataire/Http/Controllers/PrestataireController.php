@@ -22,7 +22,7 @@ class PrestataireController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth:prestataire');
+        //  $this->middleware('auth:prestataire');
 
     }
 
@@ -37,11 +37,38 @@ class PrestataireController extends Controller
         return view("Prestataire::liste-prestataires")->with("prestataires", $prestataires);
     }
 
+    public function DeletePrestataire($id)
+    {
+        Prestataire::find($id)->delete();
+        return redirect()->route("liste-prestataire");
+    }
+
     public function GetAddPrestatairePage()
     {
         return view("Prestataire::ajout-prestataire");
 
 
+    }
+
+    public function editPrestataire($id)
+    {
+        $prestataire = Prestataire::find($id);
+        return view("Prestataire::update-prestataire")->with("prestataire", $prestataire);
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        Prestataire::where("id", $id)->update([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'adresse' => $request->adresse,
+            'email' => $request->email,
+            'pays' => $request->pays,
+            'civilité' => $request->civilité
+
+        ]);
+        return redirect()->route('list-prestataire');
     }
 
     public function StorePrestataire(Request $request)
@@ -54,9 +81,9 @@ class PrestataireController extends Controller
         $prestataire->email = $request->email;
 
         $prestataire->adresse = $request->adresse;
-        $prestataire->telephone=$request->telephone;
-        if($request->statut='on'){
-        $prestataire->statut = true;
+        $prestataire->telephone = $request->telephone;
+        if ($request->statut = 'on') {
+            $prestataire->statut = true;
         }
         $prestataire->pays = $request->pays;
         if ($request->hasFile('image_pres')) {
@@ -72,21 +99,24 @@ class PrestataireController extends Controller
         $password = Hash::make(Str::random(6));
 
         //$this->sendEmail($request);
-        $prestataire->password=bcrypt("123456");
+        $prestataire->password = bcrypt("123456");
 
         $prestataire->save();
-       return redirect()->route('list-prestataire');
+        return redirect()->route('list-prestataire');
 
 
     }
-    public function GetProfile(){
+
+    public function GetProfile()
+    {
         return view("Prestataire::profile");
     }
 
-    public function sendEmail(Request $data){
+    public function sendEmail(Request $data)
+    {
         Mail::send('login', [ //view page
             'message_txt' => $data->mdp //Data for the page
-        ], function ($message) use ($data){
+        ], function ($message) use ($data) {
             $message->from('avantif@gmail.com', 'Gmail');
             $message->subject("generation password");
             $message->to($data->email);

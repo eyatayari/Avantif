@@ -12,4 +12,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('dashboard-prestataire',function (){
     return view('Prestataire::dashboard-prestataire');
 });
+Route::get("update/{id}", 'PrestataireController@editPrestataire')->name('edit-prestataire');
+Route::patch('update/prestataire/{id}','PrestataireController@update')->name("update-prestataire");
 //});
+
+Route::get('delete/prestataire','PrestataireController@DeletePrestataire')->name("delete-prestataire");

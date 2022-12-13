@@ -65,14 +65,14 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
+        <a class="nav-link collapsed" href="{{route('profile-prestatire')}}">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <form action="{{route("logout")}}" method="post">
+        <form action="{{route("logout")}}" method="get">
         @csrf
           <button type="submit" class="btn ">
             <i class="bi bi-box-arrow-in-right"></i>
