@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
 @section('title-page')
-Ajouter prestataire
+Modifier prestataire
 @stop
 
 @section('prev-page')
@@ -26,7 +26,7 @@ Ajouter client
           <div class="card-body pt-3">
             <!-- Bordered Tabs -->
 
-            <h4>Informations Prestatire</h4>
+            <h4>Informations Prestataire</h4>
 
               <div class="row mb-3">
                 

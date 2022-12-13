@@ -4,6 +4,7 @@ namespace App\Modules\Gerent\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Modules\Client\Models\Client;
+use App\Modules\Gerent\Models\Gerent;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,8 @@ class GerentController extends Controller
 
     public function GetProfile()
     {
-        return view("Gerent::profile");
+        $gerent=Gerent::find(Auth::guard("gerent")->id());
+        return view("Gerent::profile")->with("gerent",$gerent);
     }
 
     public function storeClient(Request $request)
@@ -65,5 +67,18 @@ class GerentController extends Controller
     public function deleteClient($id){
         Client::find($id)->delete();
         return redirect()->route("get-clients");
+    }
+    public function updateGerent(Request $request,$id){
+
+        Gerent::where("id", $id)->update([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'adresse' => $request->addresse,
+            'email' => $request->email,
+            'mobile' => $request->mobile,
+
+
+        ]);
+        return redirect()->route('profile-gerent');
     }
 }

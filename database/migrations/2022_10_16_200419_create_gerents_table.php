@@ -17,6 +17,8 @@ class CreateGerentsTable extends Migration
              $table->id();
              $table->string('nom');
              $table->string('prenom');
+             $table->string("mobile");
+             $table->string("pays");
 
              $table->string('password');
              $table->string('image');

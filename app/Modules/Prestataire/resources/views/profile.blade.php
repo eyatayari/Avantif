@@ -10,7 +10,7 @@ Mon profil
 
 
 @section('content')
-  @include('sweetalert::alert')
+
 
   <section class="section profile">
     <div class="row">
@@ -19,8 +19,8 @@ Mon profil
         <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="assets/img/prestataires/{{auth()->user()->image}}" alt="Profile" class="rounded-circle">
-            <h2> {{auth()->user()->nom }} {{auth()->user()->prenom }}</h2>
+            <img src="{{checkAuthUser()['image']}}" alt="Profile" class="rounded-circle">
+            <h2> {{checkAuthUser()['name']}}</h2>
 
 
 
@@ -57,7 +57,7 @@ Mon profil
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->nom }} {{auth()->user()->prenom }}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->nom }} {{checkAuthUser()['user']->prenom }}</div>
                 </div>
 
                 <div class="row">
@@ -67,27 +67,27 @@ Mon profil
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Code</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->id }}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->id }}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Country</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->pays }}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->pays }}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Address</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->adresse }}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->adresse }}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Phone</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->telephone }}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->telephone }}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Email</div>
-                  <div class="col-lg-9 col-md-8">{{auth()->user()->email}}</div>
+                  <div class="col-lg-9 col-md-8">{{checkAuthUser()['user']->email}}</div>
                 </div>
 
               </div>
@@ -95,11 +95,13 @@ Mon profil
               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                 <!-- Profile Edit Form -->
-                <form>
+                <form action="" method="post">
+                  @csrf
+                  @method('PATCH')
                   <div class="row mb-3">
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-8 col-lg-9">
-                      <img src="assets/img/prestataires/{{auth()->user()->image}}" alt="Profile">
+                      <img src="{{checkAuthUser()['image']}}" alt="Profile">
                       <div class="pt-2">
                         <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
                         <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
@@ -110,7 +112,7 @@ Mon profil
                   <div class="row mb-3">
                     <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="fullName" type="text" class="form-control" id="fullName" value="{{auth()->user()->nom}} {{auth()->user()->prenom}}">
+                      <input name="fullName" type="text" class="form-control" id="fullName" value="{{checkAuthUser()['name']}}">
                     </div>
                   </div>
 
@@ -119,28 +121,28 @@ Mon profil
                   <div class="row mb-3">
                     <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="country" type="text" class="form-control" id="Country" value="{{auth()->user()->pays}}">
+                      <input name="country" type="text" class="form-control" id="Country" value="{{checkAuthUser()['user']->pays}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="address" type="text" class="form-control" id="Address" value="{{auth()->user()->adresse}}">
+                      <input name="address" type="text" class="form-control" id="Address" value="{{checkAuthUser()['user']->adresse}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="phone" type="text" class="form-control" id="Phone" value="{{auth()->user()->telephone}}">
+                      <input name="phone" type="text" class="form-control" id="Phone" value="{{checkAuthUser()['user']->telephone}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="email" type="email" class="form-control" id="Email" value="{{auth()->user()->email}}">
+                      <input name="email" type="email" class="form-control" id="Email" value="{{checkAuthUser()['user']->email}}">
                     </div>
                   </div>
 

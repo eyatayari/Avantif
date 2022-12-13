@@ -7,7 +7,9 @@ Liste des prestataires
 @section('active-page')
 Dashobard
 @stop
-
+@section('active-page')
+    Liste des prestataires
+@stop
 @section('content')
 
     <div class="btn-ajout">

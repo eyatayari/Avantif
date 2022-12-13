@@ -18,6 +18,8 @@ class GerentsTableSeeder extends Seeder
             'image'=>'no image',
             'adresse'=>'ariana',
             'email'=>'samar@gmail.fr',
+            'mobile'=>'21220220',
+            'pays'=>"France",
             'password'=>bcrypt("samar@gmail.fr"),
         ]);
     }
