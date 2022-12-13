@@ -66,13 +66,14 @@ Rendez-vous
                           <label for="inputCity" class="form-label">Votre adresse compléte </label>
                           <input type="text" class="form-control" id="inputCity">
                           <h5 class="card-title">
-                            Adresse récentes</h6>
+                            Adresse récentes</h5>
   
                             <span class="text-muted small pt-2 ps-1"
                               >Connectez-vous pour afficher vos adresses récentes</span
                             >
 
-                            <button type="submit" class="btn btn-send ">c'est parti !</button>
+                            <button type="submit" class="btn btn-send "><a href="{{route('reservation2')}}"> c'est parti !</a></button>
+
                         </div>
                         
                         </div>

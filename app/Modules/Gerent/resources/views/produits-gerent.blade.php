@@ -192,9 +192,10 @@
                                                               <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$soin->prix}} DT</span>
 
                                                               </div>
-                                                          </div>
-                                                          <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
+                                                              <p class="about">{{$soin->description}}</p>
 
+                                                          </div>
+                                                          <p class="about">Shop from a wide range of soin from avantif.
                                                           <div class="cart mt-4 align-items-center"> <button class="btn-submit">Ajouter au panier</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                                                       </div>
                                                   </div>
@@ -280,9 +281,9 @@
                                                               <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$coiffant->prix}} DT</span>
 
                                                               </div>
+                                                              <p class="about">{{$coiffant->description}}</p>
                                                           </div>
-                                                          <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
-
+                                                          <p class="about">Shop from a wide range of coiffants from Avantif.
                                                           <div class="cart mt-4 align-items-center"> <button class="btn-submit">Ajouter au panier</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                                                       </div>
                                                   </div>
@@ -365,9 +366,9 @@
                                                               <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$beaute->prix}} DT</span>
 
                                                               </div>
+                                                              <p class="about">{{$beaute->description}}</p>
                                                           </div>
-                                                          <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
-
+                                                          <p class="about">Shop from a wide range of beauty from Avantif.
                                                           <div class="cart mt-4 align-items-center"> <button class="btn-submit">Ajouter au panier</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                                                       </div>
                                                   </div>
@@ -449,9 +450,9 @@
                                                               <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$hygiene->prix}} DT</span>
 
                                                               </div>
+                                                              <p class="about">{{$hygiene->description}}</p>
                                                           </div>
-                                                          <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
-
+                                                          <p class="about">Shop from a wide range of hygien from Avantif.
                                                           <div class="cart mt-4 align-items-center"> <button class="btn-submit">Ajouter au panier</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                                                       </div>
                                                   </div>
@@ -533,9 +534,9 @@
                                                          <div class="price d-flex flex-row align-items-center"> <span class="act-price">{{$coloration->prix}} DT</span>
 
                                                          </div>
+                                                         <p class="about">{{$coloration->description}}</p>
                                                      </div>
-                                                     <p class="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
-
+                                                     <p class="about">Shop from a wide range of Coloration from Avantif.
                                                      <div class="cart mt-4 align-items-center"> <button class="btn-submit">Ajouter au panier</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
                                                  </div>
                                              </div>

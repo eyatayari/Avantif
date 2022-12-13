@@ -82,7 +82,7 @@ Rendez-vous
                       <i class="bi bi-arrow-right"></i>
 
                     </div>
-                    <button type="submit" class="btn btn-send mb-4">Passer</button>
+                    <button type="submit" class="btn btn-send mb-4"><a href="{{route('reservation4')}}"> Passer</a></button>
             </div>
             </div>
         

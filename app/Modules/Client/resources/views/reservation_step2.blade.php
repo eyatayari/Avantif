@@ -153,7 +153,7 @@ Rendez-vous
               </div>
               <!-- End Bordered Tabs Justified -->
             </div>
-            <button type="submit" class="btn btn-send mb-4">Suivant</button>
+            <button type="submit" class="btn btn-send mb-4"><a href ="{{route("reservation3")}}">Suivant</a></button>
           </div>
         
 

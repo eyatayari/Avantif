@@ -98,10 +98,10 @@ Rendez-vous
                     </div>
               </div>
             </div>
-                    
-                    
-                    <button type="submit" class="btn btn-send mb-4">Confirmer mon rendez-vous</button>
-            
+
+            <a href="{{route('rendez-vous')}}">
+                    <button type="submit" class="btn btn-send mb-4"> Confirmer mon rendez-vous</button>
+            </a>
             </div>
         
         <div class="col-lg-4">
