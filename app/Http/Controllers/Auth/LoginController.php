@@ -81,7 +81,7 @@ class LoginController extends Controller
         Auth::logout();
         Session::flush();
         //alert()->success('You have been logged out.', 'Good bye!');
-        Alert::success('Success Message', 'Optional Title');
+       // Alert::success('Success Message', 'Optional Title');
         return Redirect('/');
 
 
