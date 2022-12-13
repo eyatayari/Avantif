@@ -1,5 +1,49 @@
 @extends('layouts.master')
 @include('layouts.sidebar-gerent')
+<style>
+    .file-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .wrapper {
+        margin: 30px;
+        padding: 10px;
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+        border-radius: 10px;
+        background-color: white;
+        width: 415px;
+    }
+
+    /* === Upload Box === */
+    .uploader {
+
+    }
+
+    .uploader {
+        margin: 10px;
+        height: 85px;
+        border: 8px dashed #e6f5e9;
+        display: flex;
+
+        align-items: center;
+
+        line-height: 0;
+        font-size: 22px;
+        color: #0c3214;
+        letter-spacing: 1.5px;
+        width: 375px;
+
+        background-color: #e6f5e9;
+        border-radius: 10px;
+
+        flex-direction: row;
+        justify-content: center;
+
+    }
+
+
+</style>
 @section('title-page')
 Ajouter client
 @stop
@@ -23,9 +67,9 @@ Ajouter client
             <img src="assets/img/profile-img.jpg" alt="Profile" class="" >
             <div class="btn-groupy" >
                 <i class="bi bi-upload"></i>
-                <span class="file-wrapper ">
+                <span class="file-wrapper wrapper ">
 
-              <input type="file" name="photo_client" id="imgInp" class="uploader" accept="image/jpg, image/jpeg, image/png" required/>
+              <input type="file" name="photo_client" id="imgInp" class="uploader form-control-sm form-control" accept="image/jpg, image/jpeg, image/png" required/>
               </span>
 
             </div>
