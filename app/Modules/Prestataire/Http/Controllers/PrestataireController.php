@@ -39,8 +39,8 @@ class PrestataireController extends Controller
 
     public function DeletePrestataire($id)
     {
-        Prestataire::find($id)->delete();
-        return redirect()->route("liste-prestataire");
+        Prestataire::where('id',$id)->delete();
+        return redirect()->route("list-prestataire");
     }
 
     public function GetAddPrestatairePage()
