@@ -11,7 +11,9 @@ Dashobard
 @section('content')
 
     <div class="btn-ajout">
+        <form action="{{route('add-prestataire')}}" method="get">
     <button type="submit" class="btn add-btn">+</button>
+        </form>
   </div>
 
   <table id="example" class="table  table-bordered" style="width:100%">
