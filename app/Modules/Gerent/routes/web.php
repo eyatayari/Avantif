@@ -16,6 +16,7 @@ Route::get('add-client',function (){
     return view('Gerent::ajout-client');
 })->name('add-client');
 Route::get('/delete/{id}','GerentController@deleteClient')->name("delete-client");
+Route::patch('update/gerent/{id}',"GerentController@updateGerent")->name("update-gerent");
 //});
 
 

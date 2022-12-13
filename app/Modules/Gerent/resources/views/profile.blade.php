@@ -17,8 +17,8 @@ Mon profil
         <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <h2>Samar mediouni</h2>
+            <img src="assets/img/gerent/{{$gerent->image}}" alt="Profile" class="rounded-circle">
+            <h2>{{$gerent->nom}} {{$gerent->prenom}}</h2>
             
             
           </div>
@@ -54,7 +54,7 @@ Mon profil
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label ">Nom et prénom</div>
-                  <div class="col-lg-9 col-md-8">samar mediouni</div>
+                  <div class="col-lg-9 col-md-8">{{$gerent->nom}} {{$gerent->prenom}}</div>
                 </div>
 
                 <div class="row">
@@ -64,27 +64,27 @@ Mon profil
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Code</div>
-                  <div class="col-lg-9 col-md-8">000111</div>
+                  <div class="col-lg-9 col-md-8">000{{$gerent->id}}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Pays</div>
-                  <div class="col-lg-9 col-md-8">France</div>
+                  <div class="col-lg-9 col-md-8">{{$gerent->pays}}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Addresse</div>
-                  <div class="col-lg-9 col-md-8">A108 Adam Street, New York, NY 535022</div>
+                  <div class="col-lg-9 col-md-8">{{$gerent->adresse}}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Mobile</div>
-                  <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                  <div class="col-lg-9 col-md-8">{{$gerent->mobile}}</div>
                 </div>
 
                 <div class="row">
                   <div class="col-lg-3 col-md-4 label">Email</div>
-                  <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                  <div class="col-lg-9 col-md-8">{{$gerent->email}}</div>
                 </div>
 
               </div>
@@ -92,11 +92,13 @@ Mon profil
               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                 <!-- Profile Edit Form -->
-                <form>
+                <form method="post" action="{{route('update-gerent',['id'=>$gerent->id])}}">
+                  @csrf
+                  @method("PATCH")
                   <div class="row mb-3">
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-8 col-lg-9">
-                      <img src="assets/img/profile-img.jpg" alt="Profile">
+                      <img src="assets/img/gerent/{{$gerent->image}}" alt="Profile" >
                       <div class="pt-2">
                         <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
                         <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
@@ -105,9 +107,15 @@ Mon profil
                   </div>
 
                   <div class="row mb-3">
-                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nom et prénom</label>
+                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nom </label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                      <input name="nom" type="text" class="form-control" id="fullName" value="{{$gerent->nom}}">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Prénom : </label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="prenom" type="text" class="form-control" id="fullName" value="{{$gerent->prenom}}">
                     </div>
                   </div>
 
@@ -116,28 +124,28 @@ Mon profil
                   <div class="row mb-3">
                     <label for="Country" class="col-md-4 col-lg-3 col-form-label">Pays</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="country" type="text" class="form-control" id="Country" value="France">
+                      <input name="country" type="text" class="form-control" id="Country" value="{{$gerent->pays}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Address" class="col-md-4 col-lg-3 col-form-label">Addresse</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="address" type="text" class="form-control" id="Address" value="A108 Adam Street, New York, NY 535022">
+                      <input name="addresse" type="text" class="form-control" id="Address" value="{{$gerent->addresse}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Mobile</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                      <input name="mobile" type="text" class="form-control" id="Phone" value="{{$gerent->mobile}}">
                     </div>
                   </div>
 
                   <div class="row mb-3">
                     <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                     <div class="col-md-8 col-lg-9">
-                      <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                      <input name="email" type="email" class="form-control" id="Email" value="{{$gerent->email}}">
                     </div>
                   </div>
 
