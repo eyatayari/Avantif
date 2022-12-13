@@ -16,4 +16,4 @@ Route::get("update/{id}", 'PrestataireController@editPrestataire')->name('edit-p
 Route::patch('update/prestataire/{id}','PrestataireController@update')->name("update-prestataire");
 //});
 
-Route::get('delete/prestataire','PrestataireController@DeletePrestataire')->name("delete-prestataire");
+Route::get('delete/prestataire/{id}','PrestataireController@DeletePrestataire')->name("delete-prestataire");
