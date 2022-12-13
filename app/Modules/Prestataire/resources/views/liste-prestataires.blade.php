@@ -26,7 +26,7 @@ Dashobard
             <th>Nom et prénom</th>
             <th>Téléphone</th>
             <th>Email</th>
-            
+            <th>Adresse</th>
             <th>Statut</th>
             <th>Action</th>
         </tr>
