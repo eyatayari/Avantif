@@ -44,7 +44,7 @@ Dashobard
                 @endif
              <td id="actionBox">
              
-                <a id="actionBtn" class=" btnDelete" href="{{route("DeletePrestataire")}}"><i class="bi bi-trash3"></i></a>
+                <a id="actionBtn" class=" btnDelete" href="{{route("delete-prestataire")}}"><i class="bi bi-trash3"></i></a>
                 <a id="actionBtn"  class="btnEdit" href="{{route('edit-prestataire',['id'=>$prestataire->id])}}"><i class="bi bi-pen"></i></a>
             </td> 
 
